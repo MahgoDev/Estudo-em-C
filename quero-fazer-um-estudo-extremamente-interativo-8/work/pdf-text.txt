@@ -1,0 +1,2369 @@
+=== PAGE 1 ===
+Material de Estudo
+Linguagem C — NP2
+Mapa de prioridades
+ Texto do slide
+ Explicação
+ Exemplos
+ Pegadinhas
+Figuras dos slides
+ Simulados A–E
+ Revisão-relâmpago
+U N I P  ·  A D S  ·  P R O G R A M A Ç Ã O  E S T R U T U R A D A  E M  C
+Conteúdo novo (Unidades 4, 5, 6 e 8) + conteúdo antigo da NP1
+(Unidades 1, 2 e 3)
+B a s e a d o n os  s l i d e s  d o P r of .  D r .  P e d r o E u p h r á s i o ( U n i d a d e s  1 ,  2 ,  3 ,  4 ,  5 ,  6  e  8 ) .
+O s  3 9 0  s l i d e s  f or a m  l i d os  u m  a  u m ;  s l i d e s  s ó c o m  f i g u r a  f or a m  a b e r t os  c om o i m a g e m  e  e x p l i c a d os .
+=== PAGE 2 ===
+Sumário
+PARTE I — CONTEÚDO NOVO (NP2): Mapa de prioridades 4
+Unidade 4 — Entrada e Saída por arquivos 7
+4.1 Abstração: fila de bytes, buffer e ponteiro de arquivo 7
+Resumo das funções (U4-04, U4-05) 7
+fscanf (U4-06) 8
+fopen e os modos de abertura (U4-07 a U4-10) 8
+fclose e o buffer (U4-11, U4-12) 9
+Lendo e escrevendo caracteres: putc / getc (U4-13, U4-18) 10
+Arquivos binários com struct: fwrite e fread (U4-14 a U4-17) 10
+feof e EOF (U4-21, U4-22) 12
+strcat (U4-23) 13
+Funções e macros do livro (págs. 159–160) (U4-28, U4-29) 13
+Exemplo para o PIM: cadastro em CSV (U4-35, U4-36) 13
+Exercícios da Unidade 4 (U4-24 a U4-26) 14
+Unidade 5 — Ferramentas para modularização (Funções) 15
+5.1 Funções — definição (U5-03) 15
+Estrutura das funções de usuário (U5-04 a U5-07) 15
+Localização das funções (U5-08 a U5-18) 16
+Hierarquia de funções (U5-19) 17
+5.2 Variáveis locais, formais e globais (U5-20 a U5-26) 18
+5.3 Passagem de parâmetros por valor (U5-27, U5-28) 19
+5.4 Regras de escopo (U5-29) 19
+Exercícios da U5 (U5-30, U5-31) 19
+Funções recursivas (U5-32 a U5-40) 20
+Unidade 6 — Variáveis compostas (vetores, strings, matrizes e estruturas) 21
+6.1 Vetores — definição (U6-03 a U6-06) 21
+Declaração, memória e sizeof (U6-07 a U6-12) 22
+Referência a elementos, inicialização e #define (U6-13 a U6-16) 23
+6.2 Strings (U6-19 a U6-21) 24
+6.3 Arrays multidimensionais (U6-22 a U6-34) 24
+6.4 Estruturas — variáveis heterogêneas (U6-35 a U6-52) 27
+Unidade 8 — Ponteiros (e passagem por referência) 31
+Definição (U8-04 a U8-08) 31
+Por que utilizamos ponteiros? (U8-09 a U8-11) 32
+1.1 Declaração de ponteiros (U8-12 a U8-14) 33
+1.2 Ponteiros e endereços (U8-15 a U8-23) 33
+1.3 Ponteiros e vetores (U8-24 a U8-30, U8-47) 35
+1.4 Aritmética de ponteiros (U8-31 a U8-39) 36
+Exercícios do livro (U8-42 a U8-46) 38
+1.5 Vetores de ponteiros e strings (U8-48 a U8-52) 40
+O tipo void (U8-54) 41
+1.6 Passagem de parâmetros por referência (U8-53 a U8-65) 41
+PARTE II — CONTEÚDO ANTIGO (NP1): mapa de prioridades 44
+Unidade 1 — Programação estruturada em C 45
+Fases do algoritmo e estruturas básicas (U1-11 a U1-17, U1-74, U1-75) 45
+Linguagem C: case sensitive, palavras-chave e linguagem estruturada (U1-18 a U1-26) 46
+Tipos de dados (U1-27 a U1-33, U1-40) 47
+Strings (U1-34 a U1-38) 49
+2 / 76Linguagem C · Material de Estudo NP2
+=== PAGE 3 ===
+Variáveis, declaração, inicialização e constantes (U1-39 a U1-51) 49
+Entrada e saída: scanf, fgets, getch, printf (U1-52 a U1-63) 50
+Unidade 2 — Estruturas básicas: operadores 52
+Operadores aritméticos e precedência (U2-04 a U2-07) 52
+Atribuição (U2-08 a U2-12) 53
+Operadores incrementais (U2-13 a U2-18; U3-37, U3-38) 53
+Relacionais e lógicos (U2-19 a U2-30) 55
+Unidade 3 — Operações e controle de fluxo 57
+Estruturas de controle e if…else (U3-04 a U3-31) 57
+switch…case (U3-32 a U3-42) 58
+Repetição: condição de controle, do…while, while e for (U3-44 a U3-77) 59
+PARTE III — Revisão: tabelas-resumo, siglas e revisão-relâmpago 62
+Tabelas-resumo (NP2) 62
+Lista de siglas e termos 63
+⚡  Revisão-relâmpago (leia na véspera) 64
+PARTE IV — Como o professor monta a prova 65
+O que os slides indicam sobre o estilo 65
+Conceitos extras que aparecem nos códigos (fora do texto principal) 66
+PARTE V — Simulado 1 (NP2) 67
+Gabarito comentado — Simulado 1 70
+Simulado 2 (NP2) 71
+Gabarito comentado — Simulado 2 73
+PARTE VI — Banco de questões curtas de fixação 74
+NP2 74
+NP1 76
+3 / 76Linguagem C · Material de Estudo NP2
+=== PAGE 4 ===
+PARTE I — CONTEÚDO NOVO (NP2): Mapa de prioridades
+A nota em estrelas combina quantas vezes o tema aparece nos slides (inclusive repetido em mais de uma
+unidade, ex.: passagem de parâmetro aparece na U5 e na U8) e quanto ele rende questão (código com saída
+para prever, tabela para decorar, comparação entre dois conceitos). ★★★  = estude primeiro; ★  = leia uma vez.
+4 / 76Linguagem C · Material de Estudo NP2
+=== PAGE 5 ===
+Tema (unidade · slides) Prioridade O que você precisa dominar
+Ponteiros: & e *, declaração,
+mudança indireta (U8 · 4–23)
+★★★ Ler int *p; p=&x; *p=5; e dizer o valor de cada variável. & =
+endereço de; * = conteúdo do endereço.
+Passagem por valor × por
+referência (U5 · 23–28; U8 · 53–65)
+★★★ Por valor = cópia (original não muda); por referência = passa o
+endereço (&) e a função altera via *. Swap, sqr, Volume, scanf.
+Ponteiros e vetores (U8 · 24–30,
+47)
+★★★ vet == &vet[0]; vet[i] == *(vet+i); &vet[i] == vet+i; nome
+do vetor é ponteiro constante.
+Aritmética de ponteiros (U8 · 31–
+36)
+★★★ p++ anda o tamanho do tipo (char 1, int 4, double 8). (*p)++ ≠ p++.
+Proibido: multiplicar, dividir, somar dois ponteiros, somar float.
+Arquivos: fopen e modos (U4 · 7–
+10)
+★★★ Tabela r, w, a, rb, wb, ab, r+, w+, a+, r+b, w+b, a+b. fopen devolve
+NULL se falhar.
+Arquivos: fprintf/fscanf ×
+fwrite/fread × fputc/fgetc (U4 ·
+4, 5, 6, 14–19)
+★★★ Texto × binário; quem grava e quem lê; parâmetros de fwrite/fread
+(endereço, tamanho, quantidade, arquivo).
+Funções: estrutura, protótipo e
+localização (U5 · 3–19)
+★★★ tipo_de_retorno nome(parâmetros){bloco}; antes do main → sem
+protótipo; depois → precisa protótipo; arquivo separado → #include
+"caminho".
+Variáveis locais, globais, formais
+e escopo (U5 · 20–29)
+★★★ Onde é declarada define validade e tempo de vida; local oculta global
+de mesmo nome.
+Vetores: declaração, índice,
+memória (U6 · 3–18)
+★★★ Índice vai de 0 a tam-1; memória = tamanho do tipo × tamanho do
+vetor (int idade[100] = 400 bytes).
+Strings e '\0' (U6 · 19–21; U1 · 34–
+38)
+★★★ "primeiro" = 8 letras + '\0' = 9 posições; char s[20] guarda 19
+caracteres.
+Estruturas (struct) (U6 · 35–52; U4
+· 14–17, 34)
+★★★ Variável heterogênea / registro; operador ponto; aninhada; definir ≠
+declarar variável; vetor de struct.
+Matrizes (arrays
+multidimensionais) (U6 · 22–34)
+★★☆ a[linha][coluna]; inicialização com chaves; tamanho = tam1×tam2×tipo;
+laço for aninhado.
+Recursividade (fatorial,
+Fibonacci) (U5 · 32–40)
+★★☆ Função que chama a si mesma; critério de parada; consome memória;
+n! = n·(n-1)!.
+fclose, buffer, EOF/feof (U4 · 11–
+12, 21–22)
+★★☆ fclose grava o que ficou no buffer e retorna 0; EOF = -1; feof ≠ 0 no
+fim.
+Vetores de ponteiros /
+mensagens de erro (U8 · 30, 48–
+52)
+★★☆ int *x[10]; x[2]=&var; y=*x[2]; e static char *err[].
+Tipo void (U8 · 54) ★★☆ Função sem retorno e/ou sem parâmetros: void f(void).
+#define (constante simbólica)
+(U6 · 15; U1 · 47–51)
+★★☆ Pré-processador troca o nome pelo valor antes de compilar; sem ponto
+e vírgula.
+Macros e funções extras de
+arquivo (U4 · 28–29, 36)
+★☆☆ NULL, FOPEN_MAX, SEEK_SET/CUR/END, EOF; fseek, rewind, ftell,
+putc/getc.
+Hierarquia de funções (U5 · 19) ★☆☆ Função chamada escrita antes da chamadora.
+Funções de string: strcpy, strcat,
+strcmp (U4 · 23; U8 · 52; U3 · 59)
+★☆☆ strcpy(destino, origem); strcat(destino, origem); strcmp == 0 → iguais.
+Biblioteca string.h.
+5 / 76Linguagem C · Material de Estudo NP2
+=== PAGE 6 ===
+💡  EXPLICAÇÃO
+Ordem sugerida de estudo: Ponteiros (U8) → Passagem por referência → Funções (U5) → Arquivos (U4)
+→ Vetores/strings/struct (U6) → simulado → revisão da NP1. O material abaixo segue a numeração do
+professor (U4, U5, U6, U8); use o mapa para escolher a ordem.
+⚠  CAI NA PROVA / PEGADINHA
+Se o professor mantiver o estilo dos exercícios que estão nos slides (ex.: “Módulo 3 exercício 9 e 10” e os
+exercícios do livro do Soffner na U8), espere código curto + “qual é a saída?” ou “qual alternativa muda
+o valor de i para 75?”. Treine executar o código “no papel” (teste de mesa).
+6 / 76Linguagem C · Material de Estudo NP2
+=== PAGE 7 ===
+Unidade 4 — Entrada e Saída por arquivos
+Slides U4-01 a U4-36 · título: “4.1 – Funções para leitura e gravação de arquivos da biblioteca da linguagem C”
+4.1 Abstração: fila de bytes, buffer e ponteiro de arquivo
+Resumo das funções (U4-04, U4-05)
+Tabela do professor: “A diferença entre os comandos” (U4-19)
+Função Tipo mais comum O que faz
+fprintf() Texto Grava dados formatados
+fscanf() Texto Lê dados formatados
+fwrite() Binário Grava bytes/blocos
+fread() Binário Lê bytes/blocos
+fputc() Texto/binário Grava 1 caractere/byte
+fgetc() Texto/binário Lê 1 caractere/byte
+📘  TEXTO DO SLIDE
+Para tratar de arquivos a linguagem C fornece um nível de abstração entre o programador e o dispositivo
+que estiver sendo usado. Esta abstração é chamada fila de bytes e o dispositivo normalmente é o arquivo.
+Existe um sistema bufferizado de acesso ao arquivo, onde um ponteiro de arquivo define vários aspectos
+do arquivo, como nome, status e posição corrente, além de ter a fila associada a ele. (U4-03, exemplo “entrada e
+saida arquivo.cpp”)
+💡  EXPLICAÇÃO
+Você nunca fala direto com o disco. Você declara um FILE *fp (o “ponteiro de arquivo”) e todas as funções
+(fprintf, fread...) recebem esse ponteiro. Ele guarda nome, status (aberto, erro, fim) e em que posição você
+está. Os bytes passam por uma “fila” (stream) e por um buffer na memória.
+🧩  EXEMPLO
+Pense no FILE* como o marcador de página de um livro: ele sabe qual livro (nome), se o livro está aberto
+(status) e em que página você parou (posição corrente).
+📘  TEXTO DO SLIDE
+fprintf: escrita em arquivos – trabalha bem com arquivos txt.
+fwrite: escrita em arquivos – trabalha bem com arquivos binários (estruturas).
+fscanf: leitura em arquivos – trabalha bem com arquivos txt.
+fread: leitura em arquivos – trabalha bem com arquivos binários (estruturas).
+fputc: escreve um byte/caractere por vez em arquivos txt.
+fgetc: leitura de um byte por vez em arquivos txt.
+FILE: tipo arquivo · fopen: função de abertura de arquivos · fclose: função de fechamento de arquivos.
+fprintf(): funciona como a função printf(). A diferença é que a saída de fprintf() é um arquivo e não a tela
+do computador. Protótipo: int fprintf (FILE *fp,char *str,...);
+7 / 76Linguagem C · Material de Estudo NP2
+=== PAGE 8 ===
+fscanf (U4-06)
+fopen e os modos de abertura (U4-07 a U4-10)
+Modo Significado (texto do slide)
+"r" Abre um arquivo texto para leitura. O arquivo deve existir antes de ser aberto.
+"w" Abrir um arquivo texto para gravação. Se o arquivo não existir, ele será criado. Se já existir, o conteúdo
+anterior será destruído.
+"a" Abrir um arquivo texto para gravação. Os dados serão adicionados no fim do arquivo ("append"), se ele já
+existir, ou um novo arquivo será criado, no caso de arquivo não existente anteriormente.
+"rb" Abre um arquivo binário para leitura. Igual ao modo "r" anterior, só que o arquivo é binário.
+"wb" Cria um arquivo binário para escrita, como no modo "w" anterior, só que o arquivo é binário.
+"ab" Acrescenta dados binários no fim do arquivo, como no modo "a" anterior, só que o arquivo é binário.
+"r+" Abre um arquivo texto para leitura e gravação. O arquivo deve existir e pode ser modificado.
+"w+" Cria um arquivo texto para leitura e gravação. Se o arquivo existir, o conteúdo anterior será destruído. Se não
+existir, será criado.
+"a+" Abre um arquivo texto para gravação e leitura. Os dados serão adicionados no fim do arquivo se ele já
+existir, ou um novo arquivo será criado, no caso de arquivo não existente anteriormente.
+"r+b" Abre um arquivo binário para leitura e escrita. O mesmo que "r+" acima, só que o arquivo é binário.
+"w+b" Cria um arquivo binário para leitura e escrita. O mesmo que "w+" acima, só que o arquivo é binário.
+"a+b" Acrescenta dados ou cria um arquivo binário para leitura e escrita. O mesmo que "a+" acima, só que o
+arquivo é binário.
+⚠  CAI NA PROVA / PEGADINHA
+Decore em pares: printf ↔ fprintf (texto, escreve), scanf ↔ fscanf (texto, lê), fwrite ↔ fread (binário,
+struct), fputc ↔ fgetc (1 caractere). A prova costuma trocar “grava” por “lê” ou “texto” por “binário”. putc =
+fputc e getc = fgetc (mesma função, U4-28).
+📘  TEXTO DO SLIDE
+fscanf: funciona como a função scanf(). A diferença é que fscanf() lê de um arquivo e não do teclado do
+computador. Protótipo: int fscanf (FILE *fp,char *str,...);
+Como já poderíamos esperar, a única diferença do protótipo de fscanf() para o de scanf() é a especificação
+do arquivo destino através do ponteiro de arquivo.
+📘  TEXTO DO SLIDE
+fopen: esta é a função de abertura de arquivos. Seu protótipo é: FILE *fopen (char
+*nome_do_arquivo,char *modo);
+O nome_do_arquivo determina qual arquivo deverá ser aberto. Este nome deve ser válido no sistema
+operacional que estiver sendo utilizado. O modo de abertura diz à função fopen() que tipo de uso você vai
+fazer do arquivo.
+8 / 76Linguagem C · Material de Estudo NP2
+=== PAGE 9 ===
+fclose e o buffer (U4-11, U4-12)
+💡  EXPLICAÇÃO
+Regra para nunca errar: letra = intenção (r = read/ler, w = write/escrever do zero, a = append/acrescentar
+no fim); + = também faz o contrário (lê e grava); b = binário. Só o r exige que o arquivo exista; w apaga o
+que havia; a preserva e escreve no fim.
+📘  TEXTO DO SLIDE
+Poderíamos então, para abrir um arquivo binário para escrita, escrever:
+FILE *fp;                 /* Declaração da estrutura */
+fp=fopen ("exemplo.bin","wb"); // o arquivo se chama exemplo.bin e está no diretório corrente
+if (!fp)
+   printf ("Erro na abertura do arquivo.");
+A condição !fp testa se o arquivo foi aberto com sucesso porque no caso de um erro a função fopen()
+retorna um ponteiro nulo (NULL). Uma vez aberto um arquivo, vamos poder ler ou escrever nele
+utilizando as funções que serão apresentadas.
+🧩  EXEMPLO
+Um app de anotações: ao salvar a nota inteira de novo use "w" (substitui); para um log de vendas do dia
+use "a" (cada venda entra no fim, nada é apagado); para abrir o cadastro só para consultar use "r".
+⚠  CAI NA PROVA / PEGADINHA
+• “Abri com "w" um arquivo que já tinha dados” → os dados foram destruídos.
+• “Abri com "r" um arquivo que não existe” → fopen retorna NULL (não cria!).
+• if(!fp) e if(fp == NULL) são a mesma verificação.
+• r+ × w+: os dois leem e gravam, mas r+ exige que exista e não apaga; w+ cria/apaga.
+• a × w: ambos criam se não existir; a diferença é o que acontece se já existir.
+📘  TEXTO DO SLIDE
+Quando acabamos de usar um arquivo que abrimos, devemos fechá-lo. Para tanto usa-se a função fclose():
+int fclose (FILE *fp);
+O ponteiro fp passado à função fclose() determina o arquivo a ser fechado. A função retorna zero no caso
+de sucesso.
+Fechar um arquivo faz com que qualquer caracter que tenha permanecido no "buffer" associado ao
+fluxo de saída seja gravado.
+Mas, o que é este "buffer"? Quando você envia caracteres para serem gravados em um arquivo, estes
+caracteres são armazenados temporariamente em uma área de memória (o "buffer") em vez de serem
+escritos em disco imediatamente. Quando o "buffer" estiver cheio, seu conteúdo é escrito no disco de uma
+vez.
+A razão para se fazer isto tem a ver com a eficiência nas leituras e gravações de arquivos. Se, para cada
+caracter que fôssemos gravar, tivéssemos que posicionar a cabeça de gravação em um ponto específico do
+disco, apenas para gravar aquele caracter, as gravações seriam muito lentas. Assim estas gravações só serão
+efetuadas quando houver um volume razoável de informações a serem gravadas ou quando o arquivo for
+fechado.
+A função exit() fecha todos os arquivos que um programa tiver aberto.
+9 / 76Linguagem C · Material de Estudo NP2
+=== PAGE 10 ===
+Lendo e escrevendo caracteres: putc / getc (U4-13, U4-18)
+int main()
+{  FILE *fp;  char string[100];  int i;
+   fp = fopen("arquivo.txt","w");   /* Arquivo ASCII, para escrita */
+   if(!fp)
+   {  printf( "Erro na abertura do arquivo");  exit(0); }
+   printf("Entre com a string a ser gravada no arquivo:");
+   gets(string);
+   for(i=0; string[i]; i++)
+       putc(string[i], fp);      // Grava a string, caractere a caractere
+   fclose(fp);
+   return 0;
+}
+Arquivos binários com struct: fwrite e fread (U4-14 a U4-17)
+🧩  EXEMPLO
+O buffer é o carrinho do supermercado: em vez de ir ao caixa a cada produto (lento), você junta tudo e
+passa de uma vez. O fclose é “ir ao caixa com o que sobrou no carrinho”. Esquecer o fclose = sair da loja
+deixando produtos no carrinho (dados podem não ser gravados).
+📘  TEXTO DO SLIDE
+putc: a função putc é utilizada na escrita de arquivo. Seu protótipo é: int putc (int ch,FILE *fp);
+escreve um caractere no arquivo.
+O programa a seguir lê uma string do teclado e escreve-a, caractere por caractere em um arquivo em
+disco (o arquivo.txt, que será aberto no diretório corrente).
+💡  EXPLICAÇÃO
+O laço for(i=0; string[i]; i++) para quando string[i] vale '\0' (zero = falso). É o jeito “C” de percorrer
+uma string até o terminador nulo.
+📘  TEXTO DO SLIDE
+“Escrevendo em Arquivos binários”, “Lendo em Arquivos binários”, “Fwrite, Fread em arquivos binários”,
+“Escrevendo e lendo em arquivos binários – laço for”. O mesmo programa aparece em 3 slides: uma struct
+Aluno (codigo, nome[50], nota) é gravada em "alunos.bin" com "wb" e depois lida com "rb".
+10 / 76Linguagem C · Material de Estudo NP2
+=== PAGE 11 ===
+typedef struct { int codigo; char nome[50]; float nota; } Aluno;
+int main() {
+  FILE *arquivo;
+  Aluno alunos[3] = { {1,"Joao",8.5}, {2,"Pedro",9.0}, {3,"Jose",5.0} };
+  Aluno alunosLidos[3];  int i;
+  // ===== ESCREVER NO ARQUIVO =====
+  arquivo = fopen("alunos.bin", "wb");
+  if (arquivo == NULL) { printf("Erro ao abrir o arquivo.\n"); return 1; }
+  for (i = 0; i < 3; i++)
+      fwrite(&alunos[i], sizeof(Aluno), 1, arquivo);
+  fclose(arquivo);
+  printf("Dados gravados com sucesso!\n");
+  // ===== LER DO ARQUIVO =====
+  arquivo = fopen("alunos.bin", "rb");
+  if (arquivo == NULL) { printf("Erro ao abrir o arquivo.\n"); return 1; }
+  for (i = 0; i < 3; i++)
+      fread(&alunosLidos[i], sizeof(Aluno), 1, arquivo);
+  fclose(arquivo);
+  // ===== MOSTRAR OS DADOS =====
+  for (i = 0; i < 3; i++) {
+      printf("\n########################\n");
+      printf("Codigo: %d\n", alunosLidos[i].codigo);
+      printf("Nome: %s\n",   alunosLidos[i].nome);
+      printf("Nota: %.2f\n", alunosLidos[i].nota);
+  }
+  return 0;
+}
+💡  EXPLICAÇÃO
+fwrite(endereço, tamanho_de_cada_item, quantidade, arquivo) e fread(endereço, tamanho,
+quantidade, arquivo) têm a mesma ordem de parâmetros. Na versão dos slides U4-14/15/16 o professor
+usa variáveis soltas (aluno1, aluno2, aluno3 gravadas; aluno4, aluno5, aluno6 recebem a leitura) e no U4-17
+troca por vetor + laço for. A leitura sai na mesma ordem em que foi gravada: aluno4 recebe os dados de
+aluno1 (Joao, 8.50), aluno5 os de aluno2 (Pedro, 9.00), aluno6 os de aluno3 (José, 5.00).
+⚠  CAI NA PROVA / PEGADINHA
+• fwrite(&aluno1, sizeof(Aluno), 1, arquivo) — o 1º argumento é endereço (&), o 2º é o tamanho
+(sizeof), o 3º é a quantidade de itens.
+• Gravar com "wb" e ler com "rb". Abrir binário com "r"/"w" é o tipo de “erro” que vira alternativa.
+• typedef struct {...} Aluno; permite escrever Aluno a; sem a palavra struct.
+• No livro (U4-32) aparece a variação fwrite(&p, 1, sizeof(p), f); — tamanho 1 byte × sizeof(p) itens:
+grava os mesmos bytes.
+11 / 76Linguagem C · Material de Estudo NP2
+=== PAGE 12 ===
+Variações do livro e “Para auxílio ao PIM” (U4-30 a U4-34)
+feof e EOF (U4-21, U4-22)
+FILE *fp;  char c;
+fp = fopen("arquivo.txt","r");   /* Arquivo ASCII, para leitura */
+if(!fp) { printf( "Erro na abertura do arquivo"); exit(0); }
+while((c = getc(fp) ) != EOF)   /* Enquanto não chegar ao final do arquivo */
+     printf("%c", c);           /* imprime o caracter lido */
+fclose(fp);
+📘  TEXTO DO SLIDE
+Página 162: “Essa operação sobrescreve o conteúdo já existente no arquivo. Em primeiro lugar, precisamos
+abrir o arquivo em modo que permita a escrita, e em seguida gravar o texto digitado pelo usuário” —
+if((arquivo = fopen("arquivo.txt","w")) == NULL) … fprintf(arquivo, "%s \n", mensagem);
+fclose(arquivo);
+Página 165 – Leitura dos caracteres do arquivo: fgets(buffer, 80, arquivo); while(!feof(arquivo)) {
+printf("%s", buffer); fgets(buffer, 80, arquivo); }
+Página 174 – escrita e leitura com variáveis bin: struct {char nome[30]; int idade;} p;
+strcpy(p.nome,"Paulo"); p.idade=15; grava em "teste2.dat" com "wb", lê com "rb".
+PIM – Escrita e leitura em arquivo com variáveis: fprintf(arquivo, "%s %s %d\n", str1, str2, num); e
+depois fscanf(arquivo, "%s %s %d", str1, str2, &num); → imprime “Valores lidos do arquivo: Hello
+World 123”.
+PIM – Escrita e leitura em arquivo com struct: struct Pessoa {nome[50], idade, altura}; fwrite(&pessoa,
+sizeof(struct Pessoa), 1, arquivo); → memset(&pessoa, 0, sizeof(struct Pessoa)); (zera para testar)
+→ fread(...) → imprime Nome: João, Idade: 30, Altura: 1.75.
+💡  EXPLICAÇÃO
+Repare no fscanf: strings (str1) vão sem & (o nome do vetor já é endereço), mas o inteiro num vai com &.
+Isso liga a U4 com a U8 (nome do vetor = endereço do 1º elemento).
+📘  TEXTO DO SLIDE
+EOF ("End of file") indica o fim de um arquivo. Às vezes, é necessário verificar se um arquivo chegou ao
+fim. Para isto podemos usar a função feof(). Ela retorna não-zero se o arquivo chegou ao EOF, caso
+contrário retorna zero.
+Outra forma de se verificar se o final do arquivo foi atingido é comparar o caractere lido por getc com
+EOF.
+O programa a seguir abre um arquivo já existente e o lê, caracter por caracter, até que o final do arquivo
+seja atingido. Os caracteres lidos são apresentados na tela:
+⚠  CAI NA PROVA / PEGADINHA
+• EOF é uma constante (vale -1, U4-29); feof() é uma função que testa se chegou ao fim (≠0 = sim).
+• Padrão while(!feof(fp)) { fscanf(...); printf(...); } (exercício 2, U4-25): o feof só fica verdadeiro
+depois de uma leitura falhar, por isso o último valor pode ser impresso duas vezes. O modelo do livro (U4-
+31) evita isso lendo uma vez antes do laço.
+12 / 76Linguagem C · Material de Estudo NP2
+=== PAGE 13 ===
+strcat (U4-23)
+Funções e macros do livro (págs. 159–160) (U4-28, U4-29)
+Função O que faz Macro
+(stdio.h) Significado
+fopen() abre um arquivo para trabalho NULL ponteiro nulo no que diz respeito ao arquivo
+fclose() fecha o arquivo FOPEN_MAX nº de arquivos que podem ser abertos
+simultaneamente
+putc() /
+fputc()
+escreve um caractere no arquivo
+aberto (mesma função)
+SEEK_SET usados com fseek() para acessar aleatoriamente o
+arquivo (início / posição atual / fim)
+getc() /
+fgetc()
+lê um caractere do arquivo
+(mesma função)
+SEEK_CUR
+fseek() posiciona o ponteiro de arquivo
+em um byte específico
+SEEK_END
+rewind() posiciona o ponteiro de arquivo
+no início deste
+EOF retorna -1 quando uma função atinge o final do
+arquivo
+fprintf() idem ao printf na saída-padrão
+fscanf() idem ao scanf na entrada-padrão
+Exemplo para o PIM: cadastro em CSV (U4-35, U4-36)
+📘  TEXTO DO SLIDE
+A seguir é apresentado um programa onde várias operações com arquivos são realizadas: primeiro o
+arquivo é aberto para a escrita, e imprime-se algo nele. Em seguida, o arquivo é fechado e novamente
+aberto para a leitura (“entrada e saida arquivo5.cpp”).
+Obs: função strcat: forma geral strcat (string_destino,string_origem); A string de origem
+permanecerá inalterada e será anexada ao fim da string de destino.
+🧩  EXEMPLO
+char s[30]="Ola, "; strcat(s,"Maria"); → s vale "Ola, Maria"; "Maria" continua igual.
+📘  TEXTO DO SLIDE
+Abre "clientes.csv" em modo "a" (append) para não sobrescrever dados existentes; verifica se o arquivo
+está vazio para escrever o cabeçalho: fseek(arquivo, 0, SEEK_END); if (ftell(arquivo) == 0)
+fprintf(arquivo, "Nome,RG,CPF,Endereco\n");; coleta nome, RG, CPF e endereço com fgets(nome,
+sizeof(nome), stdin); e remove a nova linha com nome[strcspn(nome, "\n")] = '\0';; grava com
+fprintf(arquivo, "\"%s\",\"%s\",\"%s\",\"%s\"\n", ...). Usa #define MAX_NOME 100, MAX_RG 20,
+MAX_CPF 20, MAX_ENDERECO 200.
+💡  EXPLICAÇÃO
+fseek(..., SEEK_END) leva ao fim; ftell diz em que byte está → se for 0, o arquivo está vazio. fgets guarda o
+Enter ('\n') no fim da string; strcspn acha a posição dele para trocá-lo por '\0'.
+13 / 76Linguagem C · Material de Estudo NP2
+=== PAGE 14 ===
+Exercícios da Unidade 4 (U4-24 a U4-26)
+#include <stdio.h>
+#include <math.h>
+int main(){                                      // resolução do exercício 1
+  int i=1; float x;  FILE *fp = fopen("exercicio.txt","w");
+  if(!fp){ printf("Erro na abertura do arquivo"); return 1; }
+  do { x = sqrt(i); fprintf(fp, "%f ", x); i = i + 2; } while (i <= 50);
+  fclose(fp);
+  return 0;
+}
+📘  TEXTO DO SLIDE
+1- Modifique o programa (raiz quadrada dos ímpares de 1 a 49 com do…while, x=sqrt(i); i=i+2;
+while(i<=50)) para imprimir os dados em um arquivo (dica do slide: fp = fopen("vetor.txt","w"); ...
+fprintf(fp,...); fclose(fp);).
+2- Utilize o arquivo gerado no programa anterior para fazer um programa para realizar a leitura dos dados
+gerados (fp=fopen("exercicio.txt","r"); while(!feof(fp)){ fscanf(fp,"%f ",&x); printf("\n%f",x);}
+fclose(fp);).
+3- Modifique o programa calculadora.cpp para imprimir em arquivo. 4- Após a modificação acima altere o
+programa para que ele pergunte ao usuário se deseja realizar uma nova operação.
+U4-27 é um slide em branco (apenas o cabeçalho UNIP) e U4-35 é só o título “Exemplo para o PIM”.
+14 / 76Linguagem C · Material de Estudo NP2
+=== PAGE 15 ===
+Unidade 5 — Ferramentas para modularização (Funções)
+Slides U5-01 a U5-40 · Conteúdo programático: 5.1 Funções · 5.2 Variáveis locais e globais · 5.3 Passagem de parâmetro por valor · 5.4 Regras de
+escopo · + Funções recursivas
+5.1 Funções — definição (U5-03)
+Estrutura das funções de usuário (U5-04 a U5-07)
+📘  TEXTO DO SLIDE
+Funções (também chamadas de rotinas, ou sub-programas) são a essência da programação
+estruturada. Funções são segmentos de programa que executam uma determinada tarefa específica.
+Exemplos: sqrt(), getch().
+É possível ao programador escrever suas próprias rotinas que são as funções de usuário ou rotinas de
+usuário, podendo segmentar um programa grande em vários programas menores (modularização) e
+permite que cada segmento seja escrito, testado e revisado individualmente sem alterar o
+funcionamento do programa como um todo.
+A modularização também permite que um programa seja escrito por vários programadores ao mesmo
+tempo, cada um escrevendo um segmento separado.
+🧩  EXEMPLO
+Um app de delivery: uma pessoa escreve calcularFrete(), outra aplicarCupom(), outra emitirNota().
+Cada função é testada sozinha e o main só chama na ordem certa — isso é modularização.
+⚠  CAI NA PROVA / PEGADINHA
+Funções de biblioteca (já prontas: sqrt, getch, printf, pow) × funções de usuário (você escreve: media2,
+soma). Vantagens citadas: dividir o programa, testar/revisar separadamente, vários programadores ao
+mesmo tempo.
+📘  TEXTO DO SLIDE
+Uma função de usuário constitui-se de um bloco de instruções que definem os procedimentos efetuados
+pela função, um nome pelo qual a chamamos e uma lista de argumentos passados à função.
+float media2(float a, float b)
+{  float med;
+   med = (a + b) / 2.0;
+   return(med);
+}
+A função chamada media2 recebe dois argumentos tipo float: a e b. A média destes dois valores é calculada
+e armazenada na variável med declarada internamente. A função retorna um valor do tipo float (o valor
+da variável med) para o programa que a chamou. O retorno desse valor é feito pela função return() que
+termina a execução da função.
+De modo formal, a sintaxe de uma função é: tipo_de_retorno nome_da_função(tipo_1 arg_1, tipo_2
+arg_2, ...) { [bloco de instruções da função] }
+A primeira linha da função contém a declaração da função. Na declaração de uma função se define o
+nome da função, seu tipo de retorno e a lista de argumentos que recebe. Em seguida, dentro de chaves
+{}, definimos o bloco de instruções da função.
+15 / 76Linguagem C · Material de Estudo NP2
+=== PAGE 16 ===
+Parte (figura do slide U5-07) Em float soma(float a, float b){...}
+Tipo de retorno float (antes do nome)
+Nome da função soma
+Tipos de argumentos float a, float b
+Bloco de instruções { float soma1; soma1 = a + b; return(soma1); }
+Localização das funções (U5-08 a U5-18)
+/* ANTES do main: sem protótipo */
+float media2(float a, float b){
+  float med;
+  med = (a + b) / 2.0;
+  return(med);
+}
+void main(){
+  float num_1, num_2, med;
+  puts("Digite dois números:");
+  scanf("%f %f", &num_1, &num_2);
+  med = media2(num_1, num_2);
+  printf("\nA media e´ %f", med);
+}
+/* DEPOIS do main: com protótipo */
+void main(){
+  float media2(float,float); // protótipo
+  float num_1, num_2, med;
+  puts("Digite dois números:");
+  scanf("%f %f", &num_1, &num_2);
+  med = media2(num_1, num_2);
+  printf("\nA media e´ %f", med);
+}
+float media2(float a, float b){
+  float med;
+  med = (a + b) / 2.0;
+  return(med);
+}
+📘  TEXTO DO SLIDE
+Existem basicamente duas posições possíveis para escrevermos o corpo de uma função: ou antes ou
+depois do programa principal. Podemos ainda escrever uma função no mesmo arquivo do programa
+principal ou em arquivo separado.
+Antes do programa principal (mesmo arquivo): quando escrevemos a definição de uma função antes do
+programa principal e no mesmo arquivo deste, nenhuma outra instrução é necessária.
+Depois do programa principal (mesmo arquivo): devemos incluir um protótipo da função chamada. Um
+protótipo é uma instrução que define o nome da função, seu tipo de retorno e a quantidade e o tipo
+dos argumentos da função. O protótipo de uma função indica ao compilador quais são as funções usadas
+no programa principal e os tipos.
+Observe que o protótipo de uma função nada mais é que a declaração da função sem o seu corpo.
+Observe ainda que na lista de argumentos do protótipo podem ser escritos apenas os tipos dos
+argumentos.
+16 / 76Linguagem C · Material de Estudo NP2
+=== PAGE 17 ===
+Onde está o corpo O que é preciso Exemplo
+Antes do main (mesmo arquivo) Nada float media2(...){...} void main()
+{...}
+Depois do main (mesmo
+arquivo)
+Protótipo float media2(float,float);
+Arquivo separado #include "caminho" (aspas
+duplas)
+#include "Matematica.h"
+Hierarquia de funções (U5-19)
+📘  TEXTO DO SLIDE
+Corpo da função escrito em arquivo separado: em C é permitido que o usuário crie uma função em um
+arquivo e um programa que a chame em outro arquivo distinto. Esta facilidade permite a criação de
+bibliotecas de usuário: um conjunto de arquivos contendo funções escritas pelo usuário. Esta possibilidade
+é uma grande vantagem utilizada em larga escala por programadores profissionais.
+Devemos incluir este arquivo no conjunto de arquivos de compilação do programa principal. Esta inclusão é
+feita com a diretiva #include, que instrui o compilador para incluir na compilação do programa outros
+arquivos que contêm a definição das funções de usuário e de biblioteca. Sintaxe: #include "path" — na
+diretiva #include, indicamos entre aspas duplas o caminho de localização do arquivo onde está definida a
+função chamada. Exemplo: #include "c:\tc\userbib\stat.h".
+Observação: um arquivo pode conter a definição de uma ou mais funções. Em geral, quando o arquivo
+possui apenas uma função ele é nomeado com o mesmo nome da função e extensão *.cpp ou *.c (ex.:
+media.cpp). Quando um arquivo possui a definição de mais de uma função, ele é nomeado com a
+extensão *.h ou *.lib (ex.: media(), dsvpd(), moda(), max(), min() em stat.h).
+⚠  CAI NA PROVA / PEGADINHA
+• #include <stdio.h> (sinais de menor/maior) = biblioteca do sistema; #include "stat.h" (aspas) =
+arquivo do usuário com o caminho.
+• Protótipo termina com ; e não tem corpo; pode ter só os tipos: float media2(float,float);
+• 1 função → .c/.cpp com o nome da função; várias → .h ou .lib.
+📘  TEXTO DO SLIDE
+Sempre é possível que um programa principal chame uma função que por sua vez chame outra função e
+assim sucessivamente. Quando isto acontece dizemos que a função chamadora tem hierarquia maior (ou
+superior) à função chamada. Quando isto ocorre, devemos ter o cuidado de definir (ou incluir) as funções
+em ordem crescente de hierarquia, isto é, uma função chamada é escrita antes de uma função
+chamadora. Isto se deve ao fato de que o compilador deve conhecer uma função antes de que a
+chamada seja compilada.
+🧩  EXEMPLO
+main() chama relatorio(), que chama media2(). Ordem no arquivo (sem protótipos): media2 →
+relatorio → main.
+17 / 76Linguagem C · Material de Estudo NP2
+=== PAGE 18 ===
+5.2 Variáveis locais, formais e globais (U5-20 a U5-26)
+float a, b, med;                 // GLOBAIS
+void media2(void){ med = (a + b) / 2.0; }
+void main(){
+   puts("Digite dois números:");
+   scanf("%f %f", &a, &b);
+   media2();                     // sem parâmetros: usa as globais
+   printf("\nA media destes números e´ %f", med);
+}
+Local Formal (parâmetro) Global
+Onde é declarada dentro do bloco da função na lista de parâmetros fora de qualquer função
+Quem enxerga só o bloco só a função todas as funções
+Nasce / morre início / fim do bloco chamada / fim da função declaração / fim do programa
+Exemplo float med; em media2 a, b em media2 float a,b,med; no topo
+📘  TEXTO DO SLIDE
+Em C, uma variável só pode ser usada após ser declarada. Isto porque o processador deve reservar um
+local da memória para armazenar os valores atribuídos à variável. Porém o local, do programa, onde uma
+variável é declarada define ainda seu escopo de validade. Uma variável pode ser local, global ou formal
+de acordo com o local de declaração.
+Locais: uma variável é dita local se for declarada dentro do bloco de uma função. Tem validade apenas
+dentro do bloco onde é declarada (só pode ser acessada e modificada dentro do bloco). O espaço de
+memória é criado quando a execução do bloco é iniciada e destruído quando encerrado. Assim,
+variáveis de mesmo nome, mas declaradas em blocos distintos, são para todos os efeitos variáveis
+distintas (ex.: med em media2() e med em main()).
+Formais: uma variável formal é uma variável local declarada na lista de parâmetros de uma função. Tem
+validade apenas dentro da função, porém serve de suporte para os valores passados pelas funções. As
+variáveis formais na declaração da função e na chamada da função podem ter nomes distintos. A única
+exigência é de que sejam do mesmo tipo. Por serem variáveis locais, os valores que uma função passa
+para outra não são alterados pela função chamada — passagem por valor, pois os valores das variáveis do
+programa chamador são copiados para as correspondentes variáveis da função chamada. (Ex.: a e b são
+parâmetros formais de media2(); mesmo que a e b fossem alterados, num_1 e num_2 não seriam.)
+Globais: uma variável é dita global se for declarada fora do bloco de uma função. Tem validade no escopo
+de todas as funções (pode ser acessada e modificada por qualquer função). O espaço de memória é criado
+no momento de sua declaração e destruído apenas quando o programa é encerrado.
+📘  TEXTO DO SLIDE
+No exemplo, a, b, med são variáveis globais definidas fora dos blocos das funções media() e main(). Deste
+modo ambas as funções têm pleno acesso às variáveis. Assim não é necessária a passagem de
+parâmetros para a função.
+🧩  EXEMPLO
+Global = quadro de avisos do condomínio (todo morador lê e pode riscar). Local = caderno dentro do
+seu apartamento (só você vê; outro apartamento pode ter um caderno com o mesmo nome e é outro
+caderno).
+18 / 76Linguagem C · Material de Estudo NP2
+=== PAGE 19 ===
+5.3 Passagem de parâmetros por valor (U5-27, U5-28)
+5.4 Regras de escopo (U5-29)
+int x = 10;                  // global
+void f(){ int x = 99; printf("%d ", x); }   // local oculta a global → 99
+int main(){ f(); printf("%d", x); }          // aqui vale a global → 10    Saída: 99 10
+Exercícios da U5 (U5-30, U5-31)
+#include <stdio.h>
+float volume(float a);               // protótipo (função depois do main)
+int main(){ float a;
+  printf("Aresta: "); scanf("%f", &a);
+  printf("Volume = %.2f\n", volume(a));
+  return 0; }
+float volume(float a){ return a*a*a; }
+📘  TEXTO DO SLIDE
+Quando são definidos parâmetros formais para uma função será preciso passar argumentos como
+parâmetro para que a função seja ativada. Esses argumentos podem ser passados de duas maneiras: por
+valor (ou por cópia) ou por referência (ou endereço). Nesse curso estudaremos apenas a passagem de
+parâmetro por valor (a U8 depois apresenta a referência).
+Em C, essa é a forma padrão (default) de passagem de parâmetro. Quando um parâmetro é passado por
+valor, o valor do argumento do momento da ativação da função é avaliado e COPIADO para o parâmetro
+correspondente. Ou seja, o argumento é apenas um valor de entrada. Dessa forma, qualquer alteração
+feita, dentro da função, no parâmetro não vai afetar o argumento do programa chamador, porque o
+que está sendo manipulado dentro da função é uma cópia do argumento.
+🧩  EXEMPLO
+Passar por valor = mandar uma fotocópia do documento: a pessoa pode rabiscar a cópia, o seu original
+continua intacto.
+📘  TEXTO DO SLIDE
+As regras que regem onde uma variável é válida chamam-se regras de escopo da variável. A regra de
+escopo define o âmbito de validade de variáveis, ou seja, onde as variáveis e funções são reconhecidas.
+• Duas variáveis globais não podem ter o mesmo nome. O mesmo vale para duas variáveis locais de
+uma mesma função.
+• Duas variáveis locais, de funções diferentes, podem ter o mesmo nome sem perigo algum de conflito,
+pois sua existência será em blocos diferentes.
+• Se uma função declarar uma variável local com o mesmo nome de uma variável global, esta variável
+local ocultará/substituirá aquela global, que não poderá mais ser acessada (naquela função).
+📘  TEXTO DO SLIDE
+Volume do cubo V = a³: (1) função antes do programa principal; (2) função depois do programa principal;
+(3) corpo da função em arquivo separado. As 4 operações matemáticas: (1) funções antes do main com
+SWITCH...CASE; (2) funções depois do main com IF...ELSE; (3) funções em arquivo separado.
+19 / 76Linguagem C · Material de Estudo NP2
+=== PAGE 20 ===
+Funções recursivas (U5-32 a U5-40)
+/* Fatorial RECURSIVO (U5-35) */
+int fatorial(int n)
+{ int resp;
+  if (n==1) return(1);  // parada
+  printf(" %d x",n);
+  resp = fatorial(n-1) * n;
+  return (resp); }
+/* num=5 → " 5 x 4 x 3 x 2 x 1 = 120" */
+/* Fatorial NÃO recursivo (U5-37) */
+int fatorial(int n){
+  int t, resp=1;
+  if (n==1) return 1;
+  else for (t=n; t!=0; t--)
+       { resp = resp * t;
+         printf(" %d x",t); }
+  return (resp); }
+Chamada fatorial(5) fatorial(4) fatorial(3) fatorial(2) fatorial(1)
+Devolve 24·5 = 120 6·4 = 24 2·3 = 6 1·2 = 2 1 (parada)
+/* Fibonacci RECURSIVO (U5-39) */
+void fibo(int ant, int prox, int n){
+  printf("\tFibo:%d", ant);
+  if (n > 1)
+    fibo(prox, ant+prox, n-1);
+}
+// main: fibo(1, 1, num);
+// num=6 → 1 1 2 3 5 8
+/* Fibonacci NÃO recursivo (U5-40) */
+int i,f1=0,f2=1,f3,num;
+printf("  %d", f2);
+for (i=1; i<num; i++){
+  f3 = f2 + f1;
+  printf("  %d", f3);
+  f1 = f2;  f2 = f3;
+}
+📘  TEXTO DO SLIDE
+Recursão é o processo pelo qual uma função chama a si mesma repetidamente um número finito de
+vezes. Este recurso é muito útil em alguns tipos de algoritmos chamados de algoritmos recursivos.
+Exemplo clássico: fatorial. n! = n·(n-1)·(n-2)·...·3·2·1 e 0! = 1, onde n é inteiro positivo. Propriedade: n! =
+n·(n-1)! — chamada de propriedade recursiva: o fatorial de um número pode ser calculado através do
+fatorial de seu antecessor. Para criarmos uma rotina recursiva, em C, basta criar uma chamada à própria
+função dentro dela mesma.
+A principal vantagem: algumas classes de algoritmos [inteligência artificial, simulação numérica, busca e
+ordenação em árvore binária, etc.] são mais facilmente implementadas com rotinas recursivas.
+Enquanto n não for igual a 1, a função fatorial chama a si mesma, cada vez com um valor menor. O n==1 é
+critério de parada. Há certos algoritmos que são mais eficientes quando feitos de maneira recursiva, mas a
+recursividade é algo a ser evitado sempre que possível, pois, se usada incorretamente, tende a consumir
+muita memória e ser lenta. Lembre-se que memória é consumida cada vez que o computador faz uma
+chamada a uma função. Com funções recursivas a memória do computador pode se esgotar rapidamente.
+📘  TEXTO DO SLIDE
+Série de Fibonacci (U5-38): sequência formada pela soma de cada numeral com o numeral que o antecede.
+No caso do 1, repete-se esse numeral e soma-se: 1 + 1 = 2; 2 + 1 = 3; 3 + 2 = 5; 5 + 3 = 8; 8 + 5 = 13; 13 +
+8 = 21; 21 + 13 = 34; 34 + 21 = 55; 55 + 34 = 89 … numa sequência infinita.
+⚠  CAI NA PROVA / PEGADINHA
+• Toda recursão precisa de critério de parada; sem ele a função chama a si mesma até estourar a memória.
+• Recursivo × iterativo: o recursivo é mais curto/elegante; o iterativo (for/while) gasta menos memória. O
+slide diz que a recursividade deve ser evitada sempre que possível.
+• No fatorial do slide em float (if (resposta<=1) return 1.0;) o critério é <=1, que também cobre 0! = 1.
+20 / 76Linguagem C · Material de Estudo NP2
+=== PAGE 21 ===
+Unidade 6 — Variáveis compostas (vetores, strings, matrizes e
+estruturas)
+Slides U6-01 a U6-52 · 6.1 Vetores e matrizes estáticos (variáveis homogêneas) · 6.2 Strings · 6.3 Arrays multidimensionais · 6.4 Estruturas (variáveis
+heterogêneas)
+6.1 Vetores — definição (U6-03 a U6-06)
+📘  TEXTO DO SLIDE
+Definição: um vetor é um conjunto de variáveis de um mesmo tipo de dado as quais são acessadas e
+referenciadas através da posição de índices ao identificador do vetor.
+Em muitas aplicações, quando queremos trabalhar com conjuntos de dados que são semelhantes em tipo,
+seria conveniente colocar estas informações sob um mesmo conjunto (ex.: alturas dos alunos de uma turma:
+float altura[7] = {1.80, 1.30, 1.48, 1.90, 1.73, 1.96, 1.76};).
+Em programação, este tipo de estrutura de dados é chamada de vetor (ou array, em inglês) ou, de maneira
+mais formal, estruturas de dados homogêneas. Os vetores são estruturas de dados estáticas, já que
+permanecem do mesmo tamanho ao longo de toda a execução do programa. Um vetor em C é um
+grupo de locais de memória relacionados pelo fato de que todos têm o mesmo nome e o mesmo
+tipo.
+A lista n/nota: 0→8.4, 1→6.9, 2→4.5, 3→4.6, 4→7.2. n representa um número de referência (índice) e nota é o
+nome do conjunto: a 1ª nota é 8.4 → nota[0]=8.4; a 2ª nota é 6.9 → nota[1]=6.9.
+Para reservar 10 elementos para o vetor de inteiros c: int c[10]; Para referência a um elemento: a =
+c[5]; O primeiro elemento em qualquer vetor é o elemento zero: c[0]. O segundo é c[1]. Em geral, o i-
+ésimo elemento do vetor c é chamado c[i-1]. Os nomes dos vetores seguem as mesmas convenções dos
+nomes de outras variáveis (c2, resposta, notasIntProg).
+🧩  EXEMPLO
+Fileira de armários numerados de uma academia: todos do mesmo tamanho (mesmo tipo), um nome só
+(“armário”) e um número na porta (índice). O primeiro armário é o 0.
+⚠  CAI NA PROVA / PEGADINHA
+• Homogêneo (vetor: mesmo tipo) × heterogêneo (struct: tipos diferentes).
+• O 5º elemento é v[4]; o último de int v[10] é v[9]. v[10] está fora do vetor.
+• Vetor estático = tamanho fixo durante toda a execução.
+21 / 76Linguagem C · Material de Estudo NP2
+=== PAGE 22 ===
+Declaração, memória e sizeof (U6-07 a U6-12)
+Figura U6-12 — Tabela de tipos (Sizeof vetor). Mostra tipo, tamanho aproximado em bits e faixa mínima: char/signed char 8
+bits (-127 a 127), unsigned char 8 (0 a 255), short int 16, unsigned short int 16 (0 a 65.535), long int 32 (-2.147.483.647 a
+2.147.483.647), unsigned long int 32 (0 a 4.294.967.295), float 32 (seis dígitos de precisão), double 64 (dez dígitos), long double
+80 (dez dígitos). O professor destacou int / unsigned int / signed int com uma seta e o número 32: no livro antigo o int tinha 16
+bits, mas nos compiladores atuais ele tem 32 bits = 4 bytes.
+char A; char B[5]; int V; int X[5]; float Y; float W[5]; long double K, Z[5];
+printf("%d %d", sizeof(A), sizeof(B));   // 1 e 5
+printf("%d %d", sizeof(V), sizeof(X));   // 4 e 20
+printf("%d %d", sizeof(Y), sizeof(W));   // 4 e 20
+printf("%d %d", sizeof(K), sizeof(Z));   // long double depende do compilador (ex.: 12/16 no GCC → 
+60/80)
+📘  TEXTO DO SLIDE
+Sintaxe: tipo nome[tam]; → int i[10]; onde tipo é o tipo dos elementos (int, float, double...), nome é o
+identificador (mesmas regras das variáveis) e tam é o tamanho do vetor, isto é, o número de elementos
+que o vetor pode armazenar.
+Exemplos de vetores: 1, 2, 3, 4, 5, 6, 7, 8 (tipo int) · 1.2, 1.56, 0.34, 34.9, -99.0, 34.55 (tipo float) · 'a', 'b', 'c', 'm',
+'f' (tipo char) · "um", "exemplo", "de vetor" (tipo string) · {1,2,4}, {89,45,34}, {345,567,890} (vetor de vetores).
+int idade[100]: vetor 'idade' do tipo 'int' que recebe 100 elementos. float nota[25]: pode armazenar 25
+números. char nome[80]: pode armazenar 80 caracteres.
+Na declaração de um vetor estamos reservando espaço de memória. A quantidade de memória (em
+bytes): quantidade de memória = tamanho do tipo × tamanho do vetor. Assim, int idade[100], float
+nota[25], char nome[80] usam, respectivamente, 400 (4×100), 100 (4×25) e 80 (1×80) bytes. Obs: muitos
+compiladores atuais utilizam 4 bytes para as variáveis do tipo inteiro.
+⚠  CAI NA PROVA / PEGADINHA
+Conta clássica de prova: double v[10] → 8×10 = 80 bytes; int m[3][4] → 3×4×4 = 48 bytes; char s[20]
+→ 20 bytes. sizeof é palavra reservada que devolve o tamanho em bytes.
+22 / 76Linguagem C · Material de Estudo NP2
+=== PAGE 23 ===
+Referência a elementos, inicialização e #define (U6-13 a U6-16)
+int a[8] = {1, 3, 5, 4, 8, 12, 6, 10};
+int i, total = 0;
+for (i = 0; i <= 7; i++)
+    total = total + a[i];               // total = 49
+total = a[0]+a[1]+a[2]+a[3]+a[4]+a[5]+a[6]+a[7];   // mesma coisa “na mão”
+#define TAM 5
+int a[TAM]={1,2,3,4,5}, b[TAM]={10,20,30,40,50}, s[TAM], i;
+for(i=0;i<TAM;i++){ s[i]=a[i]+b[i]; printf("%d ", s[i]); }  // 11 22 33 44 55
+char f[11]; gets(f);  for(i=9;i>=0;i--) printf("%c", f[i]);  // frase invertida
+📘  TEXTO DO SLIDE
+Cada elemento do vetor é referenciado pelo nome do vetor seguido de um índice inteiro. O primeiro
+elemento tem índice 0 e o último tem índice tam-1. O índice de um vetor deve ser inteiro. Ex.: #define
+MAX 5 int i = 7; float valor[10]; valor[1] = 6.645; valor[MAX] = 3.867; valor[i] = 7.645;
+Inicialização: tipo nome[tam] = {lista de valores}; — lista separada por vírgulas. int dia[7] =
+{12,30,14,7,13,15,6}; float nota[5] = {8.4,6.9,4.5,4.6,7.2}; char vogal[5] =
+{'a','e','i','o','u'};
+Uma constante simbólica é um identificador que é substituído por um texto de substituição pelo pré-
+processador antes de o programa ser compilado. A diretiva #define define uma constante simbólica (ex.:
+#define X 10: toda ocorrência de X é substituída por 10). Usar constantes simbólicas para especificar
+tamanhos de vetores torna os programas mais flexíveis (ou escaláveis).
+Soma de elementos: pode ser feita com laços FOR, DO...WHILE e WHILE, ou pela soma individual de cada
+elemento.
+💡  EXPLICAÇÃO
+No slide o printf está dentro das chaves do for — então ele imprime a soma parcial a cada volta (1, 4, 9,
+13, 21, 33, 39, 49). Para imprimir só o total, o printf deve ficar depois do laço.
+📘  TEXTO DO SLIDE
+Exercícios (U6-17, U6-18): 1- vetor com a[0]=1; a[1]=2; a[2]=3; a[3]=4. 2- vetor com 6 elementos digitados
+pelo usuário. 3- vetor com 6 elementos declarados com DEFINE, valores digitados. 4- somar dois vetores 'a'
+e 'b' com 5 elementos: a) um a um (a[1]+b[1]... a[n]+b[n]); b) com FOR. 5- inverter as letras de uma frase
+digitada com 10 letras (inverte frase.cpp).
+23 / 76Linguagem C · Material de Estudo NP2
+=== PAGE 24 ===
+6.2 Strings (U6-19 a U6-21)
+char string1[20];
+char string2[] = " um vetor de caracteres";
+gets(string1);                            // lê com espaços
+printf("%s", string1);
+for (i = 0; string2[i] != '\0'; i++)       // percorre até o nulo
+    printf("%c", string2[i]);
+6.3 Arrays multidimensionais (U6-22 a U6-34)
+📘  TEXTO DO SLIDE
+Um vetor de caracteres pode ser inicializado usando uma string literal: char string1[] = {"primeiro"};
+O tamanho do vetor é determinado pelo compilador, com base no comprimento da string. A string
+"primeiro" contém oito caracteres mais um caractere especial de término de string, chamado caractere
+nulo, cuja representação é '\0'. Também pode ser inicializado com constantes de caracteres isolados: char
+string1[] = {'p','r','i','m','e','i','r','o','\0'};
+Como as strings são vetores de caracteres, podemos ter acesso direto a caracteres isolados usando
+subscritos: string1[0] é 'p' e string1[3] é 'm'.
+char string2[20]; cria um vetor capaz de armazenar uma string de 19 caracteres e um caractere nulo de
+término. scanf("%s", &string2); lê uma string do teclado. Um vetor de caracteres pode ser impresso com
+printf e o especificador %s: printf("%s\n", string2);
+⚠  CAI NA PROVA / PEGADINHA
+• char s[] = "primeiro"; tem 9 posições (8 + '\0'); sizeof(s) = 9.
+• char s[20] guarda no máximo 19 letras.
+• scanf("%s") para no primeiro espaço; gets/fgets leem a linha inteira.
+• Aspas simples = um caractere ('a'); aspas duplas = string ("a" = 'a' + '\0').
+📘  TEXTO DO SLIDE
+Vetores podem ter mais de uma dimensão, isto é, mais de um índice de referência. Podemos entender um
+vetor de duas dimensões associando-o aos dados de uma tabela. Os vetores em C podem ter vários
+subíndices; um uso comum é representar tabelas de valores organizadas em linhas e colunas.
+int a[3][4]: declara uma matriz de inteiros de 3 linhas por 4 colunas. Cada elemento é identificado por
+a[i][j], onde a é o nome, i e j são subíndices (i = linha, j = coluna).
+Na tabela de notas (4 alunos × 3 provas: Mat, Fís, Quím) “a nota do 4º aluno na 2ª prova é 8.9”,
+representada no slide como nota[3,1] = 8.9 (em C escreve-se nota[3][1]).
+Sintaxe: tipo nome[tam_1][tam_2]...[tam_N]={{lista},{lista},...{lista}};
+24 / 76Linguagem C · Material de Estudo NP2
+=== PAGE 25 ===
+Figura U6-23 — int a[3][4]. Tabela com Linha 0, 1, 2 e Coluna 0 a 3; cada célula mostra seu nome a[i][j] (a[0][0] … a[2][3]). O
+primeiro índice (i) escolhe a linha; o segundo (j), a coluna.
+nota Coluna 0 (Mat) Coluna 1 (Fís) Coluna 2 (Quím)
+Linha 0 8.4 7.4 5.7
+Linha 1 6.9 6.7 4.9
+Linha 2 4.5 6.4 8.6
+Linha 3 (aluno 4) 4.6 8.9 6.3
+Linha 4 7.2 3.6 7.7
+📘  TEXTO DO SLIDE
+Exemplos: int i, j, Matriz_A[2][2]; Matriz_A[0][0]=1; Matriz_A[0][1]=2; Matriz_A[1][0]=3;
+Matriz_A[1][1]=4; — composto de 2 vetores de 2 elementos.
+float nota[5][3] = {{8.4,7.4,5.7},{6.9,6.7,4.9},{4.5,6.4,8.6},{4.6,8.9,6.3},{7.2,3.6,7.7}}; —
+nota é um vetor de duas dimensões composto de 5 vetores de 3 elementos cada.
+int tabela[2][3][2] = {{{10,15},{20,25},{30,35}},{{40,45},{50,55},{60,65}}}; — vetor de três
+dimensões: 2 vetores de 3 sub-vetores de 2 elementos cada.
+char Livro[72][30][30]; armazena os caracteres de um livro com até 72 páginas, cada página com 30
+linhas e cada linha com 30 colunas.
+25 / 76Linguagem C · Material de Estudo NP2
+=== PAGE 26 ===
+Figura U6-28 — Matriz na memória. O slide declara float A[3][3] e desenha uma coluna de células de memória
+numeradas de 0 a 15, cada uma com um elemento (A[0,0], A[1,0], A[2,0], A[3,0], A[0,1]…). A ideia é: a matriz ocupa posições
+contíguas (seguidas) de memória, como se fosse um vetor longo. Atenção: em C a ordem real é linha por linha (A[0][0], A[0]
+[1], A[0][2], A[1][0]…), por isso o endereço de A[i][j] = início + (i × nº de colunas + j) × tamanho do tipo.
+int A[2][2]={{1,2},{3,4}}, B[2][2]={{1,2},{3,4}}, S[2][2], i, j;
+for(i=0;i<2;i++)
+  for(j=0;j<2;j++)
+     S[i][j] = A[i][j] + B[i][j];        // S = {{2,4},{6,8}}
+for(i=0;i<2;i++) printf("%d ", A[i][i]); // diagonal principal: 1 4
+Figura U6-33 — Página 97 do livro (Soffner, “Algoritmos e Programação em Linguagem C”). Exercício 8 adaptado: “Em dada
+turma há 5 alunos (o livro diz dez), e cada um realizou três provas. Calcule a média de cada aluno e a média da turma.” Tabela
+Linha/coluna: disciplinas LTP (0), Eng.Soft. (1), Redes (2); alunos 0 a 4.
+📘  TEXTO DO SLIDE
+Exercícios (U6-30 a U6-32): 1- matriz 2X2 (a[0][0]=5; a[0][1]=2; a[1][0]=7; a[1][1]=6). 2- matriz 3x3 com 1..9.
+3- matriz 2x2 digitada. 4- matriz 3x3 digitada. 5- linhas/colunas e valores digitados pelo usuário. 6- soma de
+duas matrizes A e B (ambas {1,2},{3,4}) → S = ?. 7- imprimir a linha principal (diagonal) da matriz.
+26 / 76Linguagem C · Material de Estudo NP2
+=== PAGE 27 ===
+Aluno LTP Eng.Soft. Redes Média do aluno
+0 5.0 5.0 5.0 5.00
+1 6.0 7.0 8.0 7.00
+2 4.0 5.0 6.0 5.00
+3 8.0 8.0 8.0 8.00
+4 9.0 7.0 9.0 8.33
+Média da turma = (5 + 7 + 5 + 8 + 8,33) / 5 6.67
+6.4 Estruturas — variáveis heterogêneas (U6-35 a U6-52)
+struct ficha {            // "struct" inicia a declaração; "ficha" é o identificador
+   int   matricula;       // membros da estrutura (cada um com seu tipo)
+   char  nome [45];
+   char  depto [35];
+   float salario;
+};
+💡  EXPLICAÇÃO
+O código do slide U6-34 usa float A[5][3], dois for aninhados (L para linhas, C para colunas),
+scanf("%f",&A[L][C]), acumula AcNota e calcula MediaAluno = AcNota/3 quando C == 2; no fim imprime
+a matriz com printf("\t %.2f", A[L][C]) e printf("\n") ao fim de cada linha. Detalhe: no slide a soma
+MediaTurma = MediaTurma + MediaAluno está dentro do laço das colunas e depois divide por L*C (15); o
+jeito limpo é somar MediaAluno uma vez por aluno e dividir por 5 (resultado 6.67).
+📘  TEXTO DO SLIDE
+Estrutura, variável heterogênea ou variável composta heterogênea é o conjunto de variáveis agrupadas
+sob um nome único, sendo que estas variáveis podem ser de tipos de dados diferentes. A estrutura serve
+para organizar, de forma lógica, algum dado cujo valor é composto por mais de uma variável (ex.: uma data
+= dia, mês e ano). Essas variáveis são chamadas elementos ou membros da estrutura. A Estrutura
+implementa em C a ideia de registro.
+As Estruturas são utilizadas para representar um conjunto de informações logicamente relacionadas.
+Exemplos: ficha de cadastro de uma empresa (funcionário); cartão de ponto (funcionário + horários de
+entrada e saída); ficha de consultório médico (dados e estado de saúde dos pacientes).
+📘  TEXTO DO SLIDE
+Onde: a palavra-chave struct inicia a declaração da estrutura; ficha é o nome do identificador; entre as
+chaves fica a declaração dos elementos; para cada elemento deve ser especificado o tipo (int matricula).
+27 / 76Linguagem C · Material de Estudo NP2
+=== PAGE 28 ===
+Figura U6-39 — Ficha cadastral da “Empresa de Produtos Alimentícios Lancholândia”. Campos: Número Funcionário, Nome,
+Nascimento (Data, País, Estado, Cidade), Qtde dependentes, Fumante (S/N), Escolaridade, Profissão, Data Ingresso, Salário. As
+setas apontam para “Nome” e “Profissão” com o rótulo campo: cada informação da ficha é um campo (membro) da struct.
+struct est_endereco { char rua[50]; int numero; char compl[10]; char bairro[20]; char cep[10]; };
+struct ficha {
+   int matricula; char nome[45]; char depto[35]; float salario;
+   struct est_endereco endereco;          // estrutura ANINHADA (campo do tipo struct)
+} func1, func2;                            // já declara duas variáveis
+func1.endereco.numero = 120;               // dois pontos: variável.campo.subcampo
+📘  TEXTO DO SLIDE
+A cada informação dar-se-á o nome de campo. Algumas informações possuem o mesmo tipo: nome,
+cidade, estado, país e profissão são conjunto de caracteres; fumante assume dois valores (tipo lógico: não
+fumante = Falso, fumante = Verdadeiro); Qtde dependentes é inteiro (ex.: 10); Salário é real (ex.: R$
+1000,00). Para representar isso usamos variáveis compostas heterogêneas ou registro: um conjunto de
+informações (campos) relacionadas, onde cada campo pode ser de um tipo diferente (inteiro, real, caracter,
+lógico...).
+📘  TEXTO DO SLIDE
+Declaração da Estrutura (U6-43): as estruturas são definidas com a palavra reservada struct, normalmente
+no início do programa (antes da função main) ou em um arquivo separado (.h). Sintaxe: struct
+etiqueta_da_estrutura { tipo membro_1; tipo membro_2; tipo membro_n; }; (ex.: struct data{ int
+dia; int mes; int ano; };)
+Para acessar um membro deve-se usar o operador . (ponto), unindo o nome da variável de estrutura com
+o nome do campo: struct data nascimento; nascimento.dia = 10;
+O tamanho total de uma estrutura é igual à soma do tamanho de seus itens. As estruturas podem ser
+aninhadas (estruturas podem fazer parte de outras). Pode-se criar vetores de estruturas e estruturas
+podem ser inicializadas na declaração.
+📘  TEXTO DO SLIDE
+Obs: a definição da estrutura, sozinha, não é o suficiente para que ela possa ser utilizada. A estrutura ficha
+é apenas o modelo dos dados; ainda não foi alocado na memória nenhum espaço, já que nenhuma
+variável do tipo da estrutura foi criada. É necessária a declaração de variáveis: struct ficha func1, func2;
+— duas estruturas do tipo ficha foram criadas, alocando espaço para os dados de dois funcionários. Sintaxe:
+struct identificador_Estrutura nomeVar1, nomeVar2, ..., nomeVarN;
+28 / 76Linguagem C · Material de Estudo NP2
+=== PAGE 29 ===
+struct Aluno { int RA; char nome[50]; float nota; };           // U6-42
+int main(){
+   struct Aluno Paulo;
+   scanf("%d", &Paulo.RA);  scanf("%f", &Paulo.nota);
+   fflush(stdin);  gets(Paulo.nome);                            // nome é string: sem &
+   printf("RA: %d \nNota: %.2f \nNome: %s \n", Paulo.RA, Paulo.nota, Paulo.nome);
+   puts(Paulo.nome);
+}
+Figura U6-51 — Exercícios do livro. 1. Considere struct Funcionario { int registro; float salario; char
+nome[30]; } — escreva um programa que implemente essa estrutura. 2. Estrutura dos veículos de uma montadora com marca,
+ano de fabricação, cor e preço: a) escreva a estrutura Carro; b) atribua valores aos campos; c) imprima um relatório. 3. Agenda de
+telefones com nome, e-mail e telefone para cada pessoa.
+🧩  EXEMPLO
+A struct é a planta de uma casa; a variável (func1) é a casa construída. A planta sozinha não tem endereço
+nem ocupa terreno (memória).
+📘  TEXTO DO SLIDE
+Observações (U6-48): fflush(stdin); // para limpar o buffer do teclado antes de ler o caractere. Leitura
+de data com separadores: scanf("%d/%d/%d", &d6.dia, &d6.mes, &d6.ano); (digita 10/05/2026),
+scanf("%d-%d-%d", ...) (10-05-2026) ou scanf("%d %d %d", ...) (10 05 2026).
+📘  TEXTO DO SLIDE
+Exercício de LTP (U6-49, U6-50): estrutura com Matrícula (int), Nome do Funcionário (string), Salário
+(float), Endereço com nome da rua (string) e número da casa (int); cadastrar dois funcionários. Depois:
+colocar o endereço em uma estrutura filha (aninhada). O slide U6-52 resolve isso e ainda grava em
+"Teste6.txt" com fprintf, reabre com "r" e mostra caractere a caractere com while(!feof(p)){
+fscanf(p,"%c",&c); printf("%c",c); } — ligação direta entre U6 (struct) e U4 (arquivos).
+29 / 76Linguagem C · Material de Estudo NP2
+=== PAGE 30 ===
+Vetor / matriz Estrutura (struct)
+Classificação Variável composta homogênea Variável composta heterogênea (registro)
+Tipos dos
+elementos
+Todos iguais Podem ser diferentes
+Acesso Por índice: v[2] Por nome do campo com ponto:
+f.salario
+Tamanho tipo × nº de elementos soma dos tamanhos dos membros
+Combinações vetor de struct: struct ficha f[10];
+f[3].nome
+struct com vetor dentro: char nome[45]
+⚠  CAI NA PROVA / PEGADINHA
+• Acesso a membro: ponto (func1.salario). Aninhada: func1.endereco.rua.
+• Definir a struct não aloca memória; declarar variável aloca.
+• No scanf: &Paulo.RA (int precisa &) mas Paulo.nome (string não precisa).
+• typedef struct {...} Aluno; cria um apelido (U4) para não repetir “struct”.
+30 / 76Linguagem C · Material de Estudo NP2
+=== PAGE 31 ===
+Unidade 8 — Ponteiros (e passagem por referência)
+Slides U8-01 a U8-65 · Conteúdo programático: 7. Funções (7.1 Definição, 7.2 Declaração, 7.3 Passagem de parâmetros, 7.4 Escopo) · 8. Ponteiros e
+manipulação de arquivos (8.1 Definição e uso de ponteiros, 8.2 Manipulação de arquivos, 8.2.1 Leitura e escrita). Roteiro: 1.1 Declaração · 1.2
+Ponteiros e endereços · 1.3 Ponteiros e vetores · 1.4 Aritmética de ponteiros · 1.5 Vetores de ponteiros · 1.6 Passagem de parâmetros por referência
+Definição (U8-04 a U8-08)
+Figura U8-06. Linha de “caixinhas” de memória com três
+rótulos: Nome da variável (a, b, x), Conteúdo e Endereço (0,
+2, 4, 6, 8). A variável x (amarela, endereço 8) ainda contém 0;
+a seta de x para a mostra a intenção de x apontar para a.
+Figura U8-07. Agora com endereços reais em hexadecimal:
+a está em 22FF00 e x em 22FF08. O conteúdo de x é
+22FF00, ou seja, x guarda o endereço de a → x é um
+ponteiro que aponta para a.
+📘  TEXTO DO SLIDE
+Ponteiros são variáveis que guardam o endereço de outras variáveis. O ponteiro é uma representação
+simbólica de um endereço. O C é altamente dependente dos ponteiros; para ser um bom programador
+em C é fundamental ter um bom domínio deles.
+As variáveis do tipo int guardam inteiros; float guardam números de ponto flutuante; char guardam
+caracteres; as variáveis do tipo ponteiro guardam endereços de memória.
+Na linguagem C, quando declaramos ponteiros, informamos ao compilador para que tipo de variável
+vamos apontá-lo. Um ponteiro int aponta para um inteiro, isto é, guarda o endereço de um inteiro. Se uma
+variável contém o endereço de outra, então a primeira (o ponteiro) aponta para a segunda.
+31 / 76Linguagem C · Material de Estudo NP2
+=== PAGE 32 ===
+Figura U8-08 — tabela Nome / Endereço / Conteúdo. int y, *pt; y=2; pt=&y; → y está em 66FF18 e contém 2; pt está
+em 66FF1D e contém 66FF18 (o endereço de y). Os quadros vermelhos marcam y=2; e *pt=5;: depois de *pt=5 o conteúdo
+de y passa de 2 para 5 (o slide anima o “2” virando “5”). Saída: y=2, y=2, pt=66FF18, pt=66FF18, y=5, y=5.
+Por que utilizamos ponteiros? (U8-09 a U8-11)
+🧩  EXEMPLO
+Ponteiro é o endereço anotado num post-it. A casa (variável) tem um conteúdo (moradores); o post-it não
+tem moradores, só diz “Rua X, nº 18”. Ir até o endereço e trocar os moradores = *pt = 5.
+📘  TEXTO DO SLIDE
+Ponteiros são usados em situações em que a passagem de valores é difícil ou indesejada. Algumas
+razões:
+• fornecem maneiras com as quais as funções podem modificar os argumentos que recebem;
+• para passar matrizes e strings mais convenientemente de uma função para outra, isto é, usar os
+ponteiros ao invés de matrizes;
+• para manipular matrizes mais facilmente através de movimentação de ponteiros para elas (ou parte
+delas), em vez da própria matriz;
+• para criar estruturas de dados complexas, como listas encadeadas e árvores binárias, onde uma
+estrutura de dados deve conter referências sobre outra;
+• para comunicar informações sobre memória, como na função malloc() que retorna a localização de
+memória livre através de ponteiro;
+• notação de ponteiros compila mais rapidamente tornando o código mais eficiente.
+Uma lista encadeada é uma sequência de structs (os nós) ligados entre si através de ponteiros. Pode ser
+acessada através de um ponteiro para o primeiro nó, que é a cabeça da lista. Cada nó contém um ponteiro
+que aponta para a struct sucessora. O ponteiro da última struct aponta para NULL, indicando o final da lista.
+💡  EXPLICAÇÃO
+O slide U8-11 (“Exemplo”) mostra um vetor de structs struct automovel{ int ano, renavam; char
+nome[15], marca[10], cor[10], combustivel[10]; } p[3]; preenchido com scanf("%s",&p[i].nome) e
+impresso em forma de tabela — base para entender lista encadeada (struct + ponteiro para a próxima).
+32 / 76Linguagem C · Material de Estudo NP2
+=== PAGE 33 ===
+1.1 Declaração de ponteiros (U8-12 a U8-14)
+Símbolo Onde aparece Significa Exemplo
+* na declaração int *p; “p é um ponteiro para int” cria o ponteiro
+& na frente de uma variável “endereço de” p = &x;
+* no uso na frente de um ponteiro “conteúdo apontado por” (indireção) *p = 7; muda x
+p sozinho — o endereço guardado printf("%p", p);
+1.2 Ponteiros e endereços (U8-15 a U8-23)
+📘  TEXTO DO SLIDE
+Variáveis ponteiro não podem ser usadas antes de serem inicializadas, isto é, enquanto não apontarem
+para um endereço de memória válido. Para inicializar podemos atribuir o endereço de outra variável ou
+então alocar memória dinamicamente.
+Forma geral: tipo_do_ponteiro *nome_da_variável; Exemplo: int *pt. É o asterisco (*) que faz o
+compilador saber que aquela variável não vai guardar um valor mas sim um endereço para aquele tipo
+especificado.
+Existem dois operadores especiais para ponteiros: * e &. O & é um operador unário que devolve o
+endereço na memória do seu operando. O operador * é o complemento de &: operador unário que
+devolve o valor da variável localizada no endereço que o segue. Os operadores & e * têm precedência
+maior do que todos os operadores aritméticos, exceto o menos "-" unário.
+Declarações de ponteiros são precedidas do símbolo *: long *x; — x pode conter qualquer endereço de
+memória onde está armazenado um inteiro longo. Quando trabalhamos com ponteiros queremos
+basicamente: conhecer o endereço de uma variável e conhecer o conteúdo de um endereço.
+& (Endereço de): x=&y; significa que o endereço de memória da variável y é colocado em x. * (Valor
+apontado por): *x tem o valor da variável apontada por x, ou seja, *x tem o valor de y.
+Operador unário é aquele que interage apenas sobre um elemento (+, -, ++ e --): a = -b; a++; &y; *x;
+O operador (&) determina o endereço de uma variável; o operador (*) determina o conteúdo de um
+endereço.
+⚠  CAI NA PROVA / PEGADINHA
+• O * tem dois papéis: na declaração diz “é ponteiro”; no uso diz “vá ao endereço”.
+• p = 75; muda o endereço (erro lógico); *p = 75; muda o valor da variável apontada.
+• int *p; sem inicializar → aponta para lixo; usar *p antes de p=&x é erro.
+📘  TEXTO DO SLIDE
+Para atribuir um valor a um ponteiro recém-criado poderíamos igualá-lo a um valor de memória. Mas seria
+muito difícil saber o endereço de cada variável, pois estes endereços são determinados pelo compilador
+na hora da compilação e realocados na execução. Deixamos o compilador fazer este trabalho: para saber
+o endereço de uma variável basta usar o operador &.
+int count=10; int *pt; pt=&count; — criamos um inteiro count com o valor 10 e um apontador para
+inteiro pt. A expressão &count nos dá o endereço de count, o qual armazenamos em pt. Aqui não
+alteramos o valor de count, que continua valendo 10.
+O código %p usado na função printf() indica que ela deve imprimir um endereço.
+33 / 76Linguagem C · Material de Estudo NP2
+=== PAGE 34 ===
+/* Ponteiro_endereco.cpp (U8-16) */
+int num, valor;  int *p;
+num = 55;
+p = &num;    /* pega o endereço de num */
+valor = *p;  /* valor = num, de forma indireta 
+*/
+printf("\n\n%d\n", valor);         // 55
+printf("Endereco: %p\n", p);       // endereço 
+de num
+printf("Valor: %d\n", *p);         // 55
+/* Mudanca_valor_indireto.cpp (U8-17) */
+int num, *p;
+num = 55;
+p = &num;
+printf("\nValor inicial: %d\n", num); // 55
+*p = 100;   /* muda num de maneira indireta */
+printf("\nValor final: %d\n", num);   // 100
+Figura U8-19 (HowStuffWorks). Duas colunas de memória. À esquerda: 4 bytes reservados para a variável i no endereço
+248,440 e 4 bytes reservados para o ponteiro p no endereço 248,444. À direita, depois de executar o programa do slide 18
+(p=&i; *p=5;): a caixa de i contém 5 e a caixa de p contém 248,440 — “p guarda o endereço de i”.
+int v[5]={10,20,30,40,50}, *pont = v, i;           // pont = &v[0]
+printf("Endereco do 1o: %p\n", pont);
+for(i=0;i<5;i++) printf("v[%d]=%d em %p\n", i, *(pont+i), pont+i);
+int m[3][3]={{1,2,3},{4,5,6},{7,8,9}}; int *pm = &m[0][0];
+printf("2o elemento em %p vale %d\n", pm+1, *(pm+1));  // m[0][1] = 2
+📘  TEXTO DO SLIDE
+Na maioria das máquinas atuais, um ponteiro consome 4 bytes de memória; os endereços de memória
+têm 32 bits de extensão na maioria das CPUs. O local de i tem um endereço específico, neste caso 248,440.
+O ponteiro p contém aquele endereço, uma vez que você disse que p = &i;. As variáveis *p e i são,
+portanto, equivalentes. O ponteiro p literalmente contém o endereço de i. (Em máquinas 64 bits atuais um
+ponteiro costuma ter 8 bytes; na prova use o que o slide diz: 4 bytes.)
+📘  TEXTO DO SLIDE
+Exercícios 1 a 4 (U8-20 a U8-23) e U8-40/41: (1) mostrar o endereço de x (int) e y (float) e o valor (x=10,
+y=1.2) de modo indireto; (2) somar a e b (float) de modo indireto e mostrar valor e endereço de a, b e s
+usando um ponteiro *px; (3) vetor int de 5 elementos, ponteiro *pont imprimindo o endereço do primeiro
+elemento e todos os valores; (4) matriz 3X3 int, ponteiro *pont imprimindo o endereço do segundo
+elemento e todos os valores; (U8-40/41) imprimir o valor de cada elemento com o seu endereço.
+34 / 76Linguagem C · Material de Estudo NP2
+=== PAGE 35 ===
+1.3 Ponteiros e vetores (U8-24 a U8-30, U8-47)
+Forma com índice Forma com ponteiro Representa
+&vet[0] vet endereço do 1º elemento
+&vet[i] vet + i endereço do elemento i
+vet[0] *vet valor do 1º elemento
+vet[i] / p[i] *(vet + i) / *(p + i) valor do elemento i
+/* Vetor de ponteiro.cpp (U8-29) */
+short int vetor[10] = {1,2,3,4,5,6,7,8,9,10};  short int *p;
+p = vetor;
+printf("p[2]= %d",     p[2]);       // 3
+printf("*(p+2)= %d",   *(p+2));     // 3
+printf("vetor[2]= %d", vetor[2]);   // 3
+printf("(p+2)= %p",    (p+2));      // os três endereços abaixo são IGUAIS
+printf("&p[2]= %p",   &p[2]);
+printf("&vetor[2]= %p", &vetor[2]);
+📘  TEXTO DO SLIDE
+Quando se declara tipo nome[tam1][tam2]...[tamN]; o compilador calcula o tamanho em bytes: tam1 ×
+tam2 × ... × tamN × tamanho_do_tipo. Ex.: int x[3][4]; → 3 × 4 × 4 = 48 Bytes. O compilador aloca
+esse número de bytes em um espaço livre. O nome da variável que você declarou é na verdade um
+ponteiro para o tipo da variável da matriz: ele aponta para o primeiro elemento.
+Em C, o nome de um vetor é tratado como o endereço de seu primeiro elemento. int vet[5]=
+{1,2,3,4,5}; → vet[0] é 1; *vet é idêntico a vet[0]; a partir desse ponto o endereço é incrementado de 4
+em 4 (int de 4 bytes).
+Se vet é um vetor, então vet e &vet[0] representam o mesmo endereço. O endereço de qualquer
+elemento: &vet[i] é equivalente a (vet + i) — (vet + i) não é uma adição aritmética normal, mas o
+endereço do i-ésimo elemento. O valor: vet[i] é equivalente a *(vet + i).
+A notação nome_da_variável[índice] → X[4] é absolutamente equivalente a *
+(nome_da_variável+índice) → *(X+4). Na linguagem C a indexação começa com zero porque, ao pegar
+o primeiro elemento, deseja-se *nome_da_variável, então o índice deve ser zero: *X == X[0].
+O nome de um vetor é um ponteiro constante. Podemos também indexar um ponteiro qualquer: int
+matrx[10]={1,...,10}; int *p; p=matrx; printf("%d", p[2]); → 3. p[2] equivale a *(p+2).
+35 / 76Linguagem C · Material de Estudo NP2
+=== PAGE 36 ===
+Figura U8-30 — vetor de strings com índices. static char *err[]={"arquivo nao pode ser aberto\n","erro de
+leitura\n","erro de escrita\n","falha da midia\n"}; com caixinhas azuis marcando os índices 0, 1, 2 e 3 sobre
+cada mensagem. A função syntax_error(num) faz printf("%s", err[num]): se o usuário digita 2, aparece “erro de
+escrita”.
+1.4 Aritmética de ponteiros (U8-31 a U8-39)
+⚠  CAI NA PROVA / PEGADINHA
+• vet == &vet[0] (verdadeiro). • *(vet+2) == vet[2] (verdadeiro). • *vet+2 é diferente de *(vet+2): o
+primeiro é vet[0] + 2 (o * tem precedência maior que +).
+• O nome do vetor é ponteiro constante: vet++ é erro; mas p = vet; p++; pode.
+• Por isso scanf("%s", nome) não precisa de &.
+📘  TEXTO DO SLIDE
+A primeira e mais simples operação é igualar dois ponteiros: p1=p2 faz p1 apontar para o mesmo lugar
+que p2. Se quisermos que a variável apontada por p1 tenha o mesmo conteúdo da variável apontada por
+p2, fazemos *p1=*p2. Depois que se aprende a usar os dois operadores (& e *) fica fácil entender operações
+com ponteiros.
+Na linguagem C pode-se ter índices negativos: fazem referência às posições de memória antes do vetor.
+Ele apenas aloca a memória, ajusta o ponteiro do nome do vetor para o início e, quando você usa os
+índices, encontra os elementos requisitados. A varredura sequencial de uma matriz é um dos usos mais
+importantes dos ponteiros: usa-se um ponteiro que vai sendo incrementado.
+Incremento e decremento: quando incrementamos um ponteiro ele passa a apontar para o próximo valor
+do mesmo tipo. Esta é mais uma razão pela qual o compilador precisa saber o tipo de um ponteiro: se você
+incrementa um ponteiro char* ele anda 1 byte; se incrementa um double* ele anda 8 bytes. p++; p--;
+As operações com ponteiros não são a mesma coisa que operações com o conteúdo das variáveis. Para
+incrementar o conteúdo da variável apontada: (*p)++; Soma e subtração de inteiros: p=p+15; ou p+=15; E
+para usar o conteúdo 15 posições adiante: *(p+15); A subtração funciona da mesma forma.
+Comparação entre dois ponteiros: podemos saber se são iguais ou diferentes (== e !=). No caso de >, <,
+>= e <= estamos comparando qual ponteiro aponta para uma posição mais alta na memória (“mais
+adiante”): p1>p2.
+Há operações que você não pode efetuar num ponteiro: não pode dividir ou multiplicar ponteiros,
+adicionar dois ponteiros, adicionar ou subtrair floats ou doubles de ponteiros.
+36 / 76Linguagem C · Material de Estudo NP2
+=== PAGE 37 ===
+Operação Pode? Efeito
+p1 = p2 ✔ p1 aponta para o mesmo lugar que p2
+*p1 = *p2 ✔ copia o conteúdo
+p++ / p-- ✔ anda 1 elemento (sizeof do tipo bytes)
+p + 15, p += 15, p - 3 ✔ anda 15 / volta 3 elementos
+(*p)++ ✔ soma 1 ao valor apontado
+p1 == p2, p1 > p2 ✔ compara endereços (quem está mais adiante)
+p1 * p2, p / 2, p1 + p2, p + 1.5 ✘ proibido
+float Volume(float *pt)
+{ float V;
+  V = pow(*pt,3);     // 3³ = 27
+  *pt=10;             // altera a variável a do main!
+  return(V); }
+int main()
+{ float a, V;
+  scanf("%f", &a);                 // usuário digita 3
+  V = Volume(&a);                  // passa o ENDEREÇO de a
+  printf("\n O volume do cubo e' %.2f", V);                  // 27.00
+  printf("\n O valor da aresta modificada pela funcao e' %.2f", a); }  // 10.00
+🧩  EXEMPLO
+Ponteiro numa rua de casas iguais: p++ é “ir para a próxima casa” — se as casas são char (1 m de frente)
+você anda 1 m; se são double (8 m) você anda 8 m. (*p)++ é “mais um morador na casa atual”.
+📘  TEXTO DO SLIDE
+Exercícios (U8-37 a U8-39): “Se o usuário digitar 3 para a variável a, qual seria o valor dessa variável ao
+final do programa?”
+📘  TEXTO DO SLIDE
+Outros: criar ponteiros para a e b e verificar qual endereço é maior; usando aritmética de ponteiros, somar
+a com b através de seus ponteiros; dois vetores de 5 elementos — somar o 3º elemento do vetor 1 com o
+4º do vetor 2 via ponteiros: x = *(v1+2) + *(v2+3);
+37 / 76Linguagem C · Material de Estudo NP2
+=== PAGE 38 ===
+Exercícios do livro (U8-42 a U8-46)
+Figura U8-42. 1. Declare um ponteiro para um número inteiro. 2. Direcione o endereço de um número real para um ponteiro e
+faça o ponteiro mostrar o valor indiretamente. 3. Qual é a saída do código (contador=10, *temp, soma=0; temp=&count;
+*temp=20; temp=&soma; *temp=contador; printf...)? 4. Declare um ponteiro para a string “FATEC”, chamada escola.
+✅  GABARITO COMENTADO
+1) int *p; · 2) float r=2.5, *pr=&r; printf("%f", *pr); · 3) (lendo &count como &contador) *temp=20
+muda contador para 20; depois temp aponta para soma e recebe contador → saída contador = 20, *temp
+= 20, soma = 20. (Como está escrito, count não foi declarado → erro de compilação — também pode ser a
+resposta esperada!) · 4) char *escola = "FATEC";
+Figura U8-43 — Exercício 5. char c='T', d='S'; char *p1=&c; char *p2=&d; char *p3; com endereços c=1024,
+d=2048. O que é mostrado: p3=&d; *p3? · p3=p1; *p3? · *p1=*p2; *p1?
+✅  GABARITO COMENTADO
+p3=&d → *p3 = 'S' (p3 vale 2048). p3=p1 → p3 vale 1024 → *p3 = 'T'. *p1=*p2 → copia o conteúdo de d
+para c → c passa a ser 'S' → *p1 = 'S'.
+38 / 76Linguagem C · Material de Estudo NP2
+=== PAGE 39 ===
+Figura U8-44 — Exercício 6. int *p; int i; int k; i=42; k=i; p=&i; Qual alternativa muda o valor de i para 75?
+k=75; · *k=75; · p=75; · *p=75; · Duas ou mais alternativas fazem essa mudança.
+✅  GABARITO COMENTADO
+Resposta: *p = 75; — k=75 muda só k (k é uma cópia); *k=75 é erro (k não é ponteiro); p=75 muda o
+endereço guardado em p, não o i.
+Figura U8-45 — Exercícios 7, 8 e 9. 7. int x[5]={0,1,2,3,4}; valores após troca(x+1, x+4) com void troca(int
+*pa,int *pb){int t; t=*pa; *pa=*pb; *pb=t;}. 8. Por que, ao passar um vetor para uma função, C passa um ponteiro
+para o elemento zero e não uma cópia local? 9. Programa que declare um real, um inteiro e uma string e imprima endereços e
+valores (%p mostra em hexadecimal, base 16) e desenhe um diagrama da memória.
+✅  GABARITO COMENTADO
+7) x+1 = &x[1], x+4 = &x[4] → troca x[1] com x[4] → {0, 4, 2, 3, 1}. 8) Copiar um vetor inteiro gastaria tempo
+e memória (vetores podem ser enormes); passar só o endereço do 1º elemento é rápido e permite que a
+função altere o vetor original. 9) printf("%p %f", &r, r); etc.
+39 / 76Linguagem C · Material de Estudo NP2
+=== PAGE 40 ===
+Figura U8-46 — Exercício 10. Crie x e y e os ponteiros p e q; x=2, y=8, p=&x, q=&y. Imprima: a) endereço de x e valor de x; b)
+valor de p e valor de *p; c) endereço de y e valor de y; d) valor de q e valor de *q; e) endereço de p; f) endereço de q.
+int x=2, y=8, *p=&x, *q=&y;
+printf("a) %p %d\n", &x, x);     printf("b) %p %d\n", p, *p);   // a e b: mesmo endereço, valor 2
+printf("c) %p %d\n", &y, y);     printf("d) %p %d\n", q, *q);   // c e d: mesmo endereço, valor 8
+printf("e) %p\nf) %p\n", &p, &q);                               // endereços dos próprios ponteiros
+1.5 Vetores de ponteiros e strings (U8-48 a U8-52)
+char str1[100], str2[100], str3[100];           /* Exemplo_strcpy.cpp */
+gets(str1);                                      // usuário digita "Ola"
+strcpy(str2, str1);                              // str2 = "Ola"
+strcpy(str3, "Voce digitou a string ");
+printf("\n\n%s%s", str3, str2);                  // Voce digitou a string Ola
+📘  TEXTO DO SLIDE
+Podemos passar ponteiros como argumentos de funções. Na verdade é assim que funções como gets() e
+strcpy() funcionam: passando o ponteiro você possibilita à função alterar o conteúdo das strings. No
+comando while (*origem) usamos o fato de que a string termina com '\0' como critério de parada.
+Quando fazemos origem++ e destino++ não alteramos o ponteiro da main: no C, são passadas para as
+funções cópias dos argumentos; quando alteramos o ponteiro origem na função StrCpy(), o ponteiro str2
+permanece inalterado na main().
+Podemos construir vetores de ponteiros: int *x[10]; (vetor x de 10 ponteiros para int). Para atribuir o
+endereço de var ao terceiro elemento: x[2] = &var; Para obter o valor de var indiretamente e atribuir a y:
+y = *x[2];
+Um vetor de ponteiros é muito utilizado nas mensagens de erro. Quando se inicializa o vetor de ponteiros
+err diretamente na declaração, pode-se omitir o número de elementos: static char *err[] = {...};
+Nomes de strings são do tipo char*. A função strcpy() copia a string-origem para a string-destino. Sintaxe:
+strcpy (string_destino,string_origem); As funções estão no arquivo cabeçalho string.h.
+⚠  CAI NA PROVA / PEGADINHA
+int *x[10] = vetor de 10 ponteiros. Lembre: strcpy(destino, origem) e strcat(destino, origem) — o
+destino vem primeiro (igual a uma atribuição destino = origem).
+40 / 76Linguagem C · Material de Estudo NP2
+=== PAGE 41 ===
+O tipo void (U8-54)
+1.6 Passagem de parâmetros por referência (U8-53 a U8-65)
+/* POR VALOR (U8-56) */
+float sqr(float);
+main(){ float num_main, x;
+  scanf("%f", &num_main);     // 3
+  x = sqr(num_main);
+  printf("original: %f", num_main); // 3
+  printf("quadrado: %f", x); }      // 9
+float sqr(float num_sqr){
+  num_sqr = num_sqr*num_sqr;   // muda a CÓPIA
+  return num_sqr; }
+/* POR REFERÊNCIA (U8-57) */
+float sqr(float *);
+main(){ float num_main, x;
+  scanf("%f", &num_main);     // 3
+  x = sqr(&num_main);
+  printf("original: %f", num_main); // 9 !
+  printf("quadrado: %f", x); }      // 9
+float sqr(float *num_sqr){
+  *num_sqr = (*num_sqr)*(*num_sqr);
+  return *num_sqr; }
+📘  TEXTO DO SLIDE
+Em inglês, void quer dizer vazio. Ele nos permite fazer funções que não retornam nada e funções que
+não têm parâmetros. Protótipo de função que não retorna nada: void nome_da_função
+(declaração_de_parâmetros); — não temos valor de retorno na declaração return, pois ele não é
+necessário. Função sem parâmetros: tipo_de_retorno nome_da_função (void); Sem parâmetros e sem
+retorno: void nome_da_função (void); Exemplos: float RQ (void), void func (void).
+📘  TEXTO DO SLIDE
+Por valor (revisão): na linguagem C, quando chamamos uma função os parâmetros formais copiam os
+valores dos parâmetros que são passados. Isto quer dizer que não são alterados os valores que os
+parâmetros têm fora da função. Este tipo de chamada é denominado chamada por valor, pois são
+passados apenas os valores dos parâmetros e não os próprios parâmetros.
+Por referência: outro tipo de passagem ocorre quando alterações nos parâmetros formais, dentro da
+função, alteram os valores dos parâmetros que foram passados. Este tipo de chamada tem o nome de
+"chamada por referência", porque não se passa para a função os valores das variáveis, mas sim suas
+referências (endereços). A função usa as referências para alterar os valores das variáveis fora da função.
+Quando queremos alterar as variáveis passadas para uma função, podemos declarar seus parâmetros
+formais como sendo ponteiros. Os ponteiros são “as referências” que precisamos. O único inconveniente é
+que, quando usarmos a função, teremos de lembrar de colocar um & na frente das variáveis que
+estivermos passando.
+💡  EXPLICAÇÃO
+No slide U8-56 está escrito return num; (erro de digitação — a variável chama num_sqr). No U8-58 o
+professor comenta: “o parâmetro formal num_sqr sofre alterações dentro da função, mas a variável
+num_main permanece inalterada: é uma chamada por valor”. Já o U8-60 mostra que é possível passar por
+referência sem alterar o original: quad=(*pt) * (*pt); return quad; (só lê pelo ponteiro).
+41 / 76Linguagem C · Material de Estudo NP2
+=== PAGE 42 ===
+/* Swap — o exemplo clássico (U8-61) */
+void Swap (int *a, int *b);
+main ()
+{ int num1=100, num2=200;
+  Swap(&num1, &num2);
+  printf("\n\nEles agora valem %d  %d\n", num1, num2);   // 200  100
+}
+void Swap (int *a, int *b)
+{ int temp;
+  temp=*a;  *a=*b;  *b=temp; }
+Por valor (cópia) Por referência (endereço)
+O que vai para a função uma cópia do valor o endereço da variável (&x)
+Parâmetro formal float a float *a (ponteiro)
+Dentro da função usa a *a
+Original muda? Não Sim (se a função escrever em *a)
+Padrão do C ✔  (default) feito com ponteiros
+Exemplos media2, sqr (U8-56), Volume(a) Swap, scanf, sqr(&num), Volume(&a), troca
+float Volume(float *pt){ float V = pow(*pt,3); *pt = 0; return V; }
+// main: V = Volume(&a);  → volume correto e a passa a valer 0
+📘  TEXTO DO SLIDE
+O que está acontecendo é que passamos para a função Swap o endereço das variáveis num1 e num2. Estes
+endereços são copiados nos ponteiros a e b e através do operador * estamos acessando o conteúdo
+apontado e modificando-o. Mas quem é este conteúdo? Nada mais que os valores armazenados em num1
+e num2, que, portanto, estão sendo modificados!
+A função scanf() usa chamada por referência porque ela precisa alterar as variáveis que passamos para
+ela! Ela lê variáveis para nós e portanto precisa alterar seus valores. Por isto passamos para a função o
+endereço da variável a ser modificada!
+🧩  EXEMPLO
+Por valor = mandar a fotocópia do contrato; por referência = dar a chave da sua casa: a pessoa entra e
+muda os móveis de verdade.
+📘  TEXTO DO SLIDE
+Exercícios (U8-63 a U8-65): modifique o programa da função Volume(float a) passando o parâmetro por
+referência. U8-64 mostra que vetor já é passado por referência: float Vetor(int *a) recebe &A[0],
+imprime A[0..9] com a[i] e retorna *a (= 1) → “Impressao de Z: Z =1”. U8-65: “Zere o valor da variável a
+após as alterações do programa anterior sem alterar o resultado do volume do cubo” → calcule V
+primeiro e só depois faça *pt = 0;
+42 / 76Linguagem C · Material de Estudo NP2
+=== PAGE 43 ===
+⚠  CAI NA PROVA / PEGADINHA
+• “A função recebe &x” ⇒  parâmetro é ponteiro ⇒  referência ⇒  pode alterar x.
+• Esquecer o & na chamada (Swap(num1,num2)) passa valores onde se esperam endereços → erro.
+• Vetores e strings são sempre passados como endereço (o nome já é ponteiro) → a função altera o
+original.
+• No Swap, a ordem temp=*a; *a=*b; *b=temp; é obrigatória; sem temp perde-se um valor.
+43 / 76Linguagem C · Material de Estudo NP2
+=== PAGE 44 ===
+PARTE II — CONTEÚDO ANTIGO (NP1): mapa de prioridades
+A NP2 costuma reaproveitar a base da NP1 dentro dos códigos (printf/scanf, operadores, if, laços). Por isso esta
+parte é completa, mas com prioridade menor.
+Tema (slides) Prioridade O que dominar
+Operadores incrementais pré × pós
+(U2 · 13–18; U3 · 37–38)
+★★★ a=i++ × a=++i; o que cada printf imprime.
+Precedência aritmética e % (U2 · 4–7) ★★★ * / % antes de + −; esquerda→direita; % só com inteiros.
+Laços while, do…while, for (U3 · 44–
+77)
+★★★ do…while executa pelo menos 1 vez; while pode executar 0; for com
+contador.
+if/else e switch…case (U3 · 11–42) ★★★ Sintaxes; break; default opcional; rótulos constantes inteiras.
+Tipos de dados, tamanhos e
+especificadores (U1 · 27–33)
+★★☆ int 4, float 4, double 8, char 1; %d %i %f %c %s %p %o %x.
+Relacionais e lógicos, tabelas-
+verdade (U2 · 19–30)
+★★☆ Retornam 1/0; ! > && > ||; verdadeiro = ≠0.
+Atribuição, múltipla e aritmética (U2 ·
+8–12)
+★★☆ = × ==; i=j=k=1 (direita→esquerda); += −= *= /= %=.
+Strings, scanf × fgets × %[^\n] (U1 ·
+34–38, 54–62)
+★★☆ scanf("%s") para no espaço; fgets lê a linha.
+#define × const (U1 · 47–51) ★★☆ Macro não ocupa memória nem tem tipo; const tem tipo e ocupa
+memória.
+Estrutura do programa, comentários,
+case sensitive, palavras-chave, nomes
+de variáveis (U1 · 18–26, 39)
+★☆☆ main obrigatória; ; termina instrução; regras de nomes.
+Fases do algoritmo e estruturas
+básicas (U1 · 11–17, 74)
+★☆☆ Entrada–Processamento–Saída; sequência, decisão, repetição.
+44 / 76Linguagem C · Material de Estudo NP2
+=== PAGE 45 ===
+Unidade 1 — Programação estruturada em C
+Slides U1-01 a U1-83 · 1.1 Introdução · 1.1.1 Estrutura de um programa · 1.1.2 Tipos de dados básicos · 1.1.3 printf · 1.1.4 scanf · 1.1.5 Boas práticas
+Figura U1-06 — Bibliografia (eBooks Grupo GEN). “Estudo Dirigido de Linguagem C” (Manzano, 17ª ed.), “Algoritmos e
+Programação em Linguagem C” (Renato Soffner, 1ª ed.), “Linguagem C: Completa e Descomplicada” (André Backes, 2ª ed.) e
+“Linguagem C – Acompanhada de uma Xícara de Café” (Manzano). Os slides U1-07 a U1-09 mostram o livro “Linguagem C” de
+Luís Damas (10ª ed.) e seu sumário: 1 Meu primeiro programa, 2 Tipos de dados básicos, 3 Testes e condições, 4 Laços, 5
+Funções e procedimentos, 6 Vetores, 7 Strings, 8 Ponteiros, 9 Passagem de parâmetros, 10 Arquivos, 11 Estruturas, 12 Memória
+dinâmica.
+Fases do algoritmo e estruturas básicas (U1-11 a U1-17, U1-74, U1-75)
+📘  TEXTO DO SLIDE
+Conteúdo programático completo da disciplina (U1-02 a U1-05): 1. Programação estruturada em C · 2.
+Estruturas básicas (operadores aritméticos, relacionais e lógicos) · 3. Operações e controle de fluxo (if/else
+simples e encadeado, while, do-while, for) · 4. Aplicações de laços (comparação for/while/do-while; switch-
+case, break e continue) · 5. Vetores (declaração, impressão, operações) · 6. Matrizes (acesso e operações
+comuns) · 7. Funções (definição, declaração, passagem de parâmetros, escopo) · 8. Ponteiros e manipulação
+de arquivos (leitura e escrita).
+📘  TEXTO DO SLIDE
+Ao montar um algoritmo, precisamos primeiro dividir o problema em três fases fundamentais: Entrada
+(dados de entrada – “O que preciso?”), Processamento (procedimentos para chegar ao resultado – “Como
+chegar ao que quero?”) e Saída (dados já processados – “O que quero?”). A entrada é feita pela instrução
+ler e a saída pela instrução escrever.
+Trabalharemos com três tipos de estrutura: Sequencial ou Sequenciação; Decisão ou Seleção; Repetição
+ou Iteração.
+Estrutura sequencial: representada pela conexão de dois ou mais símbolos de processamento ligados por
+um símbolo indicativo do sentido do fluxo. Os comandos são executados numa sequência pré-estabelecida;
+cada comando somente é executado após o término do anterior. Todo algoritmo é uma sequência. A
+sequenciação é aplicada quando a solução pode ser decomposta em passos individuais.
+45 / 76Linguagem C · Material de Estudo NP2
+=== PAGE 46 ===
+Figura U1-14 — Decisão. Fluxogramas START→STOP:
+Simples (losango; T executa um bloco, F pula), Composta (T
+e F, cada lado com seu bloco) e Múltipla (Case a, Case b …
+Case n, cada um com ação + break, e default no fim) =
+switch.
+Figura U1-16 — Repetição. a) Com teste no início (while:
+testa antes do bloco); b) Com teste no fim (do…while: bloco
+antes do teste); c) Com variável de controle (for:
+contador=1; contador<=10; ação; contador++).
+Linguagem C: case sensitive, palavras-chave e linguagem estruturada (U1-18 a U1-26)
+Figura U1-20 — “O que é linguagem estruturada?” (trecho de livro com destaques). A característica especial de uma
+linguagem estruturada é a compartimentalização do código e dos dados; uma maneira de conseguir isso é pelo uso de sub-
+rotinas que empregam variáveis locais (temporárias); se você desenvolve funções compartimentalizadas, só precisa saber o
+que uma função faz, não como ela faz. Alerta: o uso excessivo de variáveis globais pode trazer erros por efeitos colaterais.
+💡  EXPLICAÇÃO
+U1-13 mostra a sequencial com um fluxograma START → bloco → bloco → STOP ao lado de um programa
+que lê a e b e calcula soma, subtração, multiplicação, divisão e pow(a,b). U1-15 usa if / else if / else para '+'
+e '-'. U1-17 envolve tudo num do{...} while (Resp == 's'); para repetir.
+📘  TEXTO DO SLIDE
+O C é "Case Sensitive": maiúsculas e minúsculas fazem diferença. soma ≠ Soma ≠ SOMA ≠ SoMa ≠ sOmA.
+Os comandos if e for só podem ser escritos em minúsculas; senão o compilador os interpreta como
+variáveis.
+Palavras-chave (32): auto, break, case, char, const, continue, default, do, double, else, enum, extern, float,
+for, goto, if, int, long, register, return, short, signed, sizeof, static, struct, switch, typedef, union, unsigned,
+void, volatile, while.
+46 / 76Linguagem C · Material de Estudo NP2
+=== PAGE 47 ===
+Figura U1-76 — 2.8 Bloco de instruções. “O principal componente estrutural de C é a função — a sub-rotina isolada de C.”
+Funções são os blocos de construção em que toda a atividade do programa ocorre; permitem definir e codificar separadamente
+as tarefas (programa modular) sem efeitos inesperados em outras partes.
+Tipos de dados (U1-27 a U1-33, U1-40)
+📘  TEXTO DO SLIDE
+U1-21: exemplo com #include "Matematica.h" contendo soma() e subtracao(), um while (op != '.')
+e um switch(op). As funções têm a estrutura: tipo nome_da_funcao(parâmetros) { variáveis locais;
+instruções em C }.
+O programa contém apenas uma função (a main(), que é obrigatória) sem parâmetros (void). A instrução
+printf é uma função da biblioteca stdio.h. “Eu gosto de programar em C” é uma cadeia de caracteres
+chamada string. \n indica mudança de linha (new line / line feed). Para imprimir a variável i usa-se %d. No
+final de cada instrução existe sempre um terminador “ ; ”.
+Primeiro programa: #include <stdio.h> (biblioteca das entradas e saídas padronizadas) · /* Um Primeiro
+Programa */ (comentário) · main () (função main) · { (“início” do bloco) · printf (imprimir na tela) ·
+return(0); (retorno da função main) · } (“fim” do bloco).
+Comentário: o compilador desconsidera tudo entre /* e */ (pode ter várias linhas); para uma linha também
+se usa //.
+int main(): todos os programas em C têm uma função main, pois é ela que é chamada quando o programa
+é executado; o conteúdo é delimitado por chaves { } e executado sequencialmente. int indica que a função
+retorna um inteiro; return(0); indica o número retornado (0).
+📘  TEXTO DO SLIDE
+A maioria das linguagens declara inteiro, real, caractere, cadeia de caracteres e lógico. A Linguagem C não
+definiu como tipos originais o lógico e a cadeia de caracteres (string, ex.: “UNIP”); usamos funções
+predefinidas para manipulá-los.
+Tipos primitivos em C: Inteiro: int (3, 6, 9, 27) · Real: float (3.1416, 8.8) · Caractere: char ('a', '8') · Real de
+precisão dupla: double · Tipo sem valor: void. O C tem 5 tipos básicos: char, int, float, void, double.
+double = ponto flutuante com muito mais precisão (números científicos); void = tipo vazio, “tipo sem tipo”.
+47 / 76Linguagem C · Material de Estudo NP2
+=== PAGE 48 ===
+Tipo Bytes Limite inferior Limite superior
+char 1 -128 127
+unsigned char 1 0 255
+short int 2 -32768 32767
+unsigned short int 2 0 65535
+int 4 -231 +231 - 1
+long int 4 -231 +231 - 1
+float 4 -3.2×10±38 +3.2×10±38
+double 8 -1.7×10±308 +1.7×10±308
+Figura U1-29 — Tabela ASCII (asciichartable.com) sobreposta à tabela de tipos: colunas Dec/Hex/Oct/HTML/Chr de 0 a 127
+(ex.: 32 = espaço, 48 = '0', 65 = 'A', 97 = 'a'). Explica por que char ch=98; printf("%c",ch) mostra b e
+printf("%d",'c') mostra 99: char é um número pequeno que representa um caractere.
+📘  TEXTO DO SLIDE
+Geralmente nos sistemas UNIX int e long int são equivalentes (32 bits, 4 bytes). Em outros sistemas int pode
+equivaler a short int (16 bits, 2 bytes).
+Especificadores: %c caracter · %d e %i inteiros · %f reais · %s string · %o inteiro octal · %x hexadecimal · %p
+valor ponteiro.
+O tipo inteiro permite números inteiros com até 4 bytes (dependendo do compilador). O tipo float permite
+números reais com até 4 bytes (o slide mostra binários: 3 = 11, 2 = 10, 10 = 1010, 38 = 100110).
+48 / 76Linguagem C · Material de Estudo NP2
+=== PAGE 49 ===
+Figura U1-33 — %d × %i. No printf imprimem igual (42). No scanf: %d lê só decimal; %i lê em qualquer base. Digitando 100
+→ a=100, b=100; digitando 0100 → a=100, b=64 (octal); digitando 0x10 → a=0 (falha parcial), b=16 (hexadecimal).
+Strings (U1-34 a U1-38)
+Variáveis, declaração, inicialização e constantes (U1-39 a U1-51)
+📘  TEXTO DO SLIDE
+Uma string é um vetor de caracteres terminado com um caractere nulo (valor inteiro zero, ASCII 0),
+escrito '\0'. Declaração: char nome_da_string[tamanho]; Em C, string não é um tipo primitivo (como em
+Python ou Java).
+char nome[] = "Joao"; — o compilador calcula o tamanho, incluindo o '\0'. char nome[50] = "Maria"; —
+tamanho manual. fgets(nome, sizeof(nome), stdin); — leitura.
+char *mensagem = "Bem-vindo!"; — strings declaradas assim ficam em memória somente leitura; tentar
+modificar pode causar falha de segmentação (segfault).
+Como reservamos um caractere para o terminador, declaramos a string com no mínimo um caractere a
+mais que a maior string. char nome_da_pessoa[7]; com “João”: J | O | A | O | \0 | ... | ...
+U1-38: três leituras: fgets(str1,30,stdin), scanf("%[^\n]", str2) (lê até o Enter, aceita espaços) e
+fgets(str3,30,stdin).
+📘  TEXTO DO SLIDE
+Variáveis são endereços de memória que guardam, temporariamente, um valor. Toda variável tem nome,
+tipo, tamanho (vem do tipo) e valor. Regras: deve começar com uma letra (ou sublinha); não deve conter
+símbolo especial exceto _ nem espaço; não pode ser palavra reservada. Salario – correto; Salário – errado;
+1ANO – errado; ANO1 – correto; a casa – errado; SAL/HORA – errado; SAL_HORA – correto; _DESCONTO –
+correto; -DESCONTO – errado.
+Declaração: tipo var_1; (ex.: int i; float num; char nome_1[20];). Inicialização: tipo var_1 = valor_1
+[, var_2 = valor_2, ...]; (ex.: int i = 0, j = 100; float num = 13.5; char nome_1[20] = " Programa
+Teste ";).
+O C possui 4 tipos básicos de constantes: inteiras, de ponto flutuante, caracteres e strings.
+Constantes simbólicas (Macro): #define nome valor — diretiva que diz ao compilador para trocar as
+ocorrências de nome por valor. Não há ; no final (é comando para o compilador, não para o processador).
+Deve ser escrita antes da rotina principal. Por convenção o nome da macro é em maiúsculas. Pré-definidas
+no math.h (Turbo C++): M_PI 3.14159 (π), M_PI_2 1.57079 (π/2), M_PI_4 0.78539 (π/4), M_1_PI 0.31830 (1/π),
+M_SQRT2 1.41421 (√2). Ex.: #define PI 3.14159 #define EU "Renato" #define FALSE 0
+49 / 76Linguagem C · Material de Estudo NP2
+=== PAGE 50 ===
+Macro #define PI 3.14159 (U1-50) Constante const double PI = 3.14159; (U1-51)
+Não é variável: é diretiva de pré-processamento É uma variável real, mas imutável após inicialização
+O pré-processador substitui todas as ocorrências antes da
+compilação
+Tem tipo definido (double, int...)
+Não ocupa espaço em memória Ocupa espaço em memória
+Não tem tipo (inserida textualmente) Respeita escopo de bloco, função, arquivo
+Não respeita escopo de blocos Pode ser inspecionada em depuradores
+Não aparece em depuradores Pode ser passada por referência (ponteiro para const)
+#define MAX 100 int array[MAX]; // OK: substituído
+por 100
+const int MAX = 100; int array[MAX]; // funciona em
+C99 com VLA
+Entrada e saída: scanf, fgets, getch, printf (U1-52 a U1-63)
+💡  EXPLICAÇÃO
+U1-49: com raio 3.14, area = Pi*raio*raio/2 e area = PI*raio*raio/2 dão o mesmo resultado (15.49) —
+muda só a forma de declarar. U1-45: ch=98; printf("%d",ch) → 98 e printf("%c",ch) → b. U1-46:
+fflush(stdin) antes de scanf("%c",&ch) limpa o Enter que sobrou.
+📘  TEXTO DO SLIDE
+Comandos de entrada: scanf, fgets. Comandos de saída: printf, puts. Argumentos são as entradas que a
+função recebe; é através deles que passamos parâmetros. printf imprime textos e variáveis na tela (saída);
+scanf recebe pelo teclado (entrada).
+scanf(): leitura de dados (tipados) via teclado. Forma geral: scanf("string de controle", lista de
+argumentos); %d inteiros · %f reais · %c caracter · %s caracteres. scanf("%f",&valor); — &valor: o dado
+lido deverá ser armazenado no endereço (&) alocado para a variável.
+Outros comandos que leem apenas um caracter: getch(), getche() e getchar(). getche() imprime o
+caractere na tela antes de retorná-lo; getch() apenas retorna sem imprimir. Ambas estão em conio.h e
+geralmente não estão disponíveis em Unix (cc e gcc), pois não fazem parte do padrão ANSI.
+scanf("%s",&Nome) para no espaço; scanf("%[^\n]", Nome) lê a linha. Nem todo compilador funciona o
+scanf("%s",&...) e deve-se utilizar fgets(): fgets(variável, tamanho, stdin); — ler uma linha de texto
+(recomendado para strings).
+printf() coloca na tela variáveis e/ou cadeia de caracteres (ex.: printf("\n O Volume e %.4f ",v); →
+5.2000).
+50 / 76Linguagem C · Material de Estudo NP2
+=== PAGE 51 ===
+Figura U1-59. Mesma entrada “Pedro Carlos”: com scanf("%s",&Nome) sai “O seu nome e': Pedro” (parou no espaço); com
+scanf("%[^\n]", Nome) sai “Pedro Carlos”.
+📘  TEXTO DO SLIDE
+Exercícios (U1-64 a U1-82): traduzir pseudocódigo para C: soma (c=a+b); nome e endereço (nome, rua,
+número, bairro, CEP, cidade); média de 4 notas; Torricelli V = sqrt(Vo² + 2·a·ΔS) com ΔS = S − So (sqrt exige
+#include <math.h>); estoque médio = (Qde_Min + Qde_Max)/2; distância entre dois pontos d =
+sqrt((x2−x1)² + (y2−y1)²) usando pow(x,2); volume da caixa = comprimento × altura × largura; volume da
+lata = 3.14159 × raio² × altura. Os slides U1-70 a U1-73 indicam exercícios do livro a partir das páginas 16 e
+46 (menu “1 – Clientes / 2 – Fornecedores / 3 – Faturas / 0 – Sair” com \t; para escrever % no printf usa-se
+%%).
+2.9 Arquivos de cabeçalho: #include <stdio.h> inclui o cabeçalho stdio.h (std = standard, io =
+Input/Output). math.h = funções matemáticas; conio.h = console input and output (teclado e monitor).
+Sintaxe: #include <nome_bib>.
+51 / 76Linguagem C · Material de Estudo NP2
+=== PAGE 52 ===
+Unidade 2 — Estruturas básicas: operadores
+Slides U2-01 a U2-32 · 2.1 Operadores aritméticos, relacionais e lógicos · 2.2 Aplicações
+Operadores aritméticos e precedência (U2-04 a U2-07)
+Operador Ação
++ Soma (inteira e ponto flutuante)
+- Subtração ou troca de sinal
+* Multiplicação
+/ Divisão (inteira e ponto flutuante)
+% Resto de divisão (de inteiros)
+++ Incremento
+-- Decremento
+Expressão Valor Ordem
+1 + 2 - 3 0 + -
+24 - 3 * 5 9 * -
+4 - 2 * 6 / 4 + 1 2 * / - +
+6 / 2 + 11 % 3 * 4 11 / % * + (11 % 3 = 2; 2 * 4 = 8)
+Figura U2-07. y = 4 - 2*6/4 + 1 → 2.00; x = 6/2 + 11%2*4 → 3 + 1·4 = 7.00; z = 6/2 + 11%(2*4) → 3 + 11%8 = 3
++ 3 = 6.00 (a tela mostra 6.00; o comentário do slide diz “=4”, mas 11 % 8 = 3).
+📘  TEXTO DO SLIDE
+Restrições de operandos: os operandos devem ser constantes numéricas ou identificadores de variáveis
+numéricas. +, -, *, / operam números de todos os tipos, porém o operador % somente aceita operandos
+inteiros. Expressões válidas: 6.4 + 2.1 = 8.5; 7 - 2 = 5; 2.0 * 2.0 = 4.0; 6 / 3 = 2; 47 % 2 = 1 (o slide liga o 47
+% 2 a um programa que testa par/ímpar com numero % 2 == 0).
+Precedência: as mesmas da matemática elementar. *, / e % têm precedência sobre + e -. Entre
+operadores de mesma precedência, da esquerda para a direita. A ordem pode ser quebrada com
+parênteses ( ).
+52 / 76Linguagem C · Material de Estudo NP2
+=== PAGE 53 ===
+Atribuição (U2-08 a U2-12)
+Figura U2-12. Saídas: i += 1 → 1.00; j -= val → 1.00; num *= 2 + k → 12.55 (num=1, k=7.5544); num = num*2 + k → 4.00; x /=
+10 → 2.00. Pegadinha: num *= 5 + k é num = num * (5 + k) — a expressão da direita é calculada inteira antes (o
+comentário do slide “num = num * 5 + k” não confere com a saída).
+Operadores incrementais (U2-13 a U2-18; U3-37, U3-38)
+⚠  CAI NA PROVA / PEGADINHA
+Divisão inteira: 2*6/4 = 12/4 = 3 e 6/4 = 1 (descarta a parte decimal quando os dois operandos são int),
+mesmo que o resultado vá para uma variável float.
+📘  TEXTO DO SLIDE
+O operador de atribuição do C é o =: pega o valor à direita e atribui à variável da esquerda; além disto
+retorna o valor que atribuiu. float x=1.5, k=2.3, w=3.5; e if (k==w) — o operador '==' é de
+comparação e não de atribuição. O símbolo = não tem o significado usual da matemática; em pseudo-
+linguagem é ←. Atribuições inválidas: 1 = a; (constante!) e b + 1 = a; (expressão!).
+Atribuição múltipla: var_1 = [var_2 = ...] expressão; — as operações ocorrem da direita para a
+esquerda (cuidado com conversões de tipo). Ex.: i = j = k = 1; x = y = 10.0;
+Atribuição aritmética: += -= *= /= %=. var += exp ⇔  var = var + exp (idem para os demais). Ex.: i +=
+1 e val *= 2.
+📘  TEXTO DO SLIDE
+Uma instrução de incremento adiciona uma unidade ao conteúdo de uma variável; uma de decremento
+subtrai uma unidade. Em C: ++ e --, chamados genericamente de operadores incrementais. ++var,
+var++ ⇔  var = var + 1; --var, var-- ⇔  var = var - 1.
+Se o operador for colocado à esquerda, a variável é incrementada (ou decrementada) antes de ser usada
+em outra operação. Se for colocado à direita, é incrementada depois de ser usada. Os operadores
+incrementais têm a mais alta precedência entre todos, superados apenas pelos parênteses.
+53 / 76Linguagem C · Material de Estudo NP2
+=== PAGE 54 ===
+Figura U2-13 — tabela Operador/Descrição/Exemplo/Resultado. ++x pré-incremento (x passa a ser 6 antes da linha ser
+avaliada); x++ pós-incremento (x ainda é 5 na linha atual, só depois vira 6); --x pré-decremento (vira 4 antes); x-- pós-
+decremento (ainda 5, depois 4).
+Figura U2-14 — “O que será impresso em cada comando printf?” Programa 1 (incrementa em linha separada): i=1, j=1, k=-1,
+z=-1. Programa 2 (incrementa dentro do printf): ++i → 1; j++ → 0; --k → -1; z-- → 0.
+Código (i começa em 3, U3-38) a b c i
+a = i++; 3 0 0 4
+b = ++i; 3 5 0 5
+c = --i; 3 5 4 4
+💡  EXPLICAÇÃO
+U2-16 começa com i = 4: a=i++ → a=4, i=5; b=++i → b=6, i=6; c=i-- → c=6, i=5; c=--i → c=4, i=4 (é o
+que mostra a tela). U2-18 recomeça i=3 antes de cada linha: a=3,i=4 · b=4,i=4 · c=3,i=2 · c=2,i=2.
+54 / 76Linguagem C · Material de Estudo NP2
+=== PAGE 55 ===
+Relacionais e lógicos (U2-19 a U2-30)
+A B A && B A || B !A
+1 1 1 1 0
+1 0 0 1 0
+0 1 0 1 1
+0 0 0 0 1
+Figura U2-26 — Precedência dos operadores lógicos: ! (NOT) mais alto → && (AND) → || (OR) mais baixo. Exemplo: int
+resultado = !0 || 0 && 1; → !0 = 1; 0 && 1 = 0; 1 || 0 = 1.
+📘  TEXTO DO SLIDE
+Os operadores relacionais retornam verdadeiro (1) ou falso (0). Uma condição de controle é uma
+expressão lógica avaliada como verdadeira ou falsa, construída com operadores relacionais e lógicos. Em C
+não existem tipos lógicos: verdadeira = 1, falsa = 0. Operadores: > maior do que · >= maior ou igual · <
+menor · <= menor ou igual · == igual · != diferente.
+Lógicos: ! (NÃO), && (E / AND), || (OU / OR) — mesmo significado dos booleanos AND, OR e NOT.
+Sintaxe: expr_1 && expr_2, expr_1 || expr_2, !expr. Ex.: (x > 5) && (y < 2), (x != 5) || (y != 2), !
+(y == 2).
+&& é VERDADEIRO (1) somente se os dois forem verdadeiros; || é FALSO (0) somente se os dois forem
+falsos; ! inverte. Observação: em C o retorno verdadeiro é representado por qualquer número diferente
+de 0, e não somente pelo 1.
+55 / 76Linguagem C · Material de Estudo NP2
+=== PAGE 56 ===
+Figura U2-21 — Página 53 do livro (Damas). Com x=3, y=5: 3==5 : 0; 3>5 : 0; 3>=5 : 0; 3<5 : 1; 3<=5 : 1; 3!=5 : 1. Com x=5,
+y=3: 0, 1, 1, 0, 0, 1. Prova visual de que relacional devolve 0 ou 1. (U2-20 traz a tabela Operador/Nome/Exemplo/Significado: ==
+igualdade “a é igual a b?”, > maior que, >= maior ou igual que, < menor que, <= menor ou igual que, != diferente de.)
+💡  EXPLICAÇÃO
+Exemplos com futebol (U2-28 a U2-30): AND — if ((clube==1)&&((clube!=2)&&(clube!=3)&&(clube!=4)))
+“Você acertou: O Flamengo será campeão!!!”; OR — if ((clube==1)||(clube==2)||(clube==3)||
+(clube=4)); NOT — while (!x) repete enquanto x for 0. U2-22 usa if/else if/else para dizer qual número é
+maior ou se são iguais.
+⚠  CAI NA PROVA / PEGADINHA
+No exemplo OR do slide aparece (clube=4) com um só =: isso é atribuição, vale 4 (verdadeiro) e faz o if
+ser sempre verdadeiro — o programa sempre diz “Você ERROU!!!! O Flamengo será campeão!!!”. Clássica
+pegadinha = × ==. U2-32 (livro, exercícios 12–15) cobra exatamente isso: if (x = 5) e if (x = 0)
+(atribuição: 5 → verdadeiro, 0 → falso).
+56 / 76Linguagem C · Material de Estudo NP2
+=== PAGE 57 ===
+Unidade 3 — Operações e controle de fluxo
+Slides U3-01 a U3-82 · 3.1 if/else (simples e encadeadas), switch…case · 3.2 while, do-while, for · site de apoio citado: progestrc.streamlit.app
+Estruturas de controle e if…else (U3-04 a U3-31)
+Figura U3-13 — if de um bloco. Losango “condição”: V →
+bloco; F → segue direto. Exemplo: se digitar “+” mostra a
+soma (5,00 para 2 e 3) e “Saiu do laço”; se digitar “-” só
+mostra “Saiu do laço”.
+ Figura U3-19 — if/else if múltiplo. Condição 1? V → bloco
+1; F → Condição 2? V → bloco 2; F → Condição 3?… Só um
+bloco é executado. (U3-16 mostra o if/else de dois blocos:
+condição? → bloco 1 ou bloco 2.)
+U3-21: if(num>0) a=b; else if(num<0) a=b+1; else a=b-1; (b = 5)
+num = 1 a = 5
+num = -2 a = 6
+num = 0 a = 4
+📘  TEXTO DO SLIDE
+Estruturas de controle permitem controlar a sequência das ações lógicas. Basicamente, existem dois tipos:
+estruturas de repetição e estruturas de decisão (condicionais). A de repetição permite que um bloco seja
+executado repetidamente uma quantidade controlada de vezes; a de decisão permite executar um entre
+dois ou mais blocos.
+A estrutura if...else é a mais simples estrutura de controle do C; permite executar um entre vários blocos; o
+controle é dado por uma condição (expressão lógica ou numérica).
+Decisão de um bloco: if(condição){ bloco } — se a condição for verdadeira, o bloco é executado; caso
+contrário, não. Dois blocos: if(condição){ bloco 1; } else { bloco 2; }. Múltiplos blocos:
+if(condição 1){bloco 1;} else if(condição N){bloco N;} else {bloco P}.
+💡  EXPLICAÇÃO
+Exemplos/exercícios: maior de dois números (Exemplo 1); opção 's' soma e 'u'/'U' subtração — digitar 'S'
+maiúsculo dá “opcao invalida” (case sensitive!); multiplicação ou divisão; raiz quadrada só se Num >= 0;
+maior de idade (>= 18); soma >= 10 → soma+5, senão soma−7; média: < 3.0 reprovado, 3.0 ≤ média < 6.0
+(ou 6.75) outra prova/exame, ≥ 6.0 (6.75) aprovado. Pág. 55 (Soffner): cópias “xerox” R$ 0,25 por folha,
+acima de 100 folhas R$ 0,20 — Resolução 1: preco = 0.20 * numFolhas; Resolução 2 (0,20 só nas que
+passam de 100): preco = 25.00 + 0.20 * (numFolhas - 100).
+57 / 76Linguagem C · Material de Estudo NP2
+=== PAGE 58 ===
+switch…case (U3-32 a U3-42)
+Figura U3-36 — Centro de Usinagem CNC (Controle Numérico Computadorizado). switch(selecao){ case 1: desbaste
+grosso; case 2: desbaste fino; case 3: acabamento; case 4: polimento; } sem break: se escolher 2, a
+máquina faz desbaste fino, acabamento e polimento — começa no ponto escolhido e segue até o fim. Aqui a “queda” entre cases
+é proposital.
+📘  TEXTO DO SLIDE
+A estrutura switch...case é uma estrutura de decisão que permite a execução de um conjunto de instruções
+a partir de pontos diferentes conforme o resultado de uma expressão inteira de controle. O resultado é
+comparado ao valor de cada um dos rótulos, e as instruções são executadas a partir deste rótulo.
+switch(expressão){ case rótulo_1: conjunto_1 case rótulo_2: conjunto_2 ... case rótulo_n:
+conjunto n [default: conjunto d] } — expressão é uma expressão inteira; rótulos são constantes
+inteiras diferentes entre si; o rótulo default é opcional. O fluxo é desviado para o rótulo igual ao resultado
+e todas as instruções abaixo deste rótulo serão executadas. Se nenhum rótulo for igual, executa-se o
+default. Particularmente útil quando há instruções que se deve executar em ordem, mas podendo começar
+em pontos diferentes.
+⚠  CAI NA PROVA / PEGADINHA
+Sem break, o switch continua executando os cases de baixo (“fall-through”). No menu com ch = getchar()
+os rótulos são '1' e '2' (caracteres, que também são inteiros). switch não aceita faixa (case x>5) nem
+float.
+💡  EXPLICAÇÃO
+Exercícios: 4 operações com switch (aceitando maiúscula/minúscula com dois cases seguidos: case 's':
+case 'S':); conversão de temperatura com switch — F = (9·C + 160)/5 ou F = (9.0/5.0)·C + 32 ou F = 1,8·C
++ 32; C = (5·F − 160)/9 ou C = (5.0/9.0)·(F − 32); K = C + 273; algoritmo p1 que imprime o maior de i, j, k.
+58 / 76Linguagem C · Material de Estudo NP2
+=== PAGE 59 ===
+Repetição: condição de controle, do…while, while e for (U3-44 a U3-77)
+Figura U3-57 — fluxograma do while. Seta de entrada → losango “condição?”: V → bloco → volta para a condição; F → sai.
+Como o teste vem primeiro, o bloco pode rodar zero vezes.
+while do…while for
+Teste no início no fim no início
+Mínimo de
+execuções
+0 1 0
+Uso típico repetição
+indeterminada
+menu / “deseja continuar?” / validar
+entrada
+número determinado de vezes
+(contador)
+Sintaxe while(c){...} do{...}while(c); for(i=0;i<n;i++){...}
+📘  TEXTO DO SLIDE
+Em todas as estruturas de repetição existe pelo menos uma expressão que faz o controle: a condição de
+controle — expressão lógica ou aritmética cujo resultado pode ser considerado verdadeiro ou falso. C não
+possui variáveis lógicas, só numéricas: falsa se o valor for igual a zero, verdadeira se for diferente de
+zero. Com i = 0, j = 3: (i == 0) → 1 verdadeiro; (i > j) → 0 falso; (i) → 0 falso; (j) → 3 verdadeiro.
+do...while: faz com que o bloco seja executado pelo menos uma vez. Após a execução, a condição é
+avaliada: verdadeira → executa outra vez; falsa → termina. do { bloco } while(condição); (note o ; no
+final).
+while: while(condição){ bloco } — a condição é avaliada em primeiro lugar; se verdadeira executa o
+bloco e avalia de novo; se falsa termina sem executar. Ao contrário do do...while, o bloco pode não ser
+executado nenhuma vez.
+for: usado quando se quer um número determinado de ciclos; a contagem é feita por uma variável
+chamada contador (estrutura de repetição com contador). for(inicialização; condição; incremento){
+bloco }. O contador é inicializado antes da 1ª iteração; o bloco é executado; depois de cada iteração o
+contador é incrementado; a condição é avaliada: verdadeira repete, falsa termina. for(i=1; i<=10; i++)
+imprime 1, 2, ..., 9, 10. Podem existir mais de uma expressão de inicialização e de incremento, separadas
+por vírgula, mas não mais de uma condição: for(i=0, j=10; i<10; i++, j--).
+59 / 76Linguagem C · Material de Estudo NP2
+=== PAGE 60 ===
+Módulo 3 exercício 9 (U3-75): forma correta de declarar o for
+A. for (i=1 ; i<5 ; i++) printf("O valor é %d ", i+4);
+B. for(i=1 , i<5 , i++) ...
+C. for(i=1; i<5 , i ++) printf(...; i+4);
+D. for(i=1 , i<5 , i++); ...
+E. for(i=1 ; i<5 ; i++); printf(...);
+✅  GABARITO COMENTADO
+A. B/C/D usam vírgula no lugar de ponto e vírgula. E compila, mas o ; logo após o for cria um laço vazio: o
+printf roda uma vez só, com i = 5 (“O valor é 9”).
+Figura U3-77 — Módulo 3 exercício 10. while (conta<10){ total+=conta; printf("conta = %d, total= %d \n",
+conta++, total); } com alternativas A–E e a tela de execução: conta = 0, total= 0; 1, 1; 2, 3; 3, 6; 4, 10; 5, 15; 6, 21; 7, 28; 8,
+36; 9, 45.
+✅  GABARITO COMENTADO
+E. O conta++ é pós-incremento: imprime o valor atual e só depois soma 1. total acumula 0+1+2+…
+💡  EXPLICAÇÃO
+Exemplos: while (r=='s'||r=='S'); while (r != 0) equivale a while (r); do{ scanf num } while(num
+<= 0.0); repete enquanto negativo; do{ y=y+3; i--; } while(i); roda 10 vezes (i de 10 até 1). Login e
+senha com strcmp() (string.h): se for igual a 0 as duas strings são iguais. Exercícios: 10 primeiros ímpares
+(posição e soma = 100) com do…while, while e for; Celsius↔Fahrenheit de 0 a 100 com for; raiz dos 50
+primeiros inteiros; série 5, 11, 17, 23… (soma dos 10 primeiros termos = 320); Menu do PIM com switch +
+while/do…while.
+60 / 76Linguagem C · Material de Estudo NP2
+=== PAGE 61 ===
+💡  EXPLICAÇÃO
+U3-78 a U3-82 (exercícios do livro, págs. 78 e 98–103): senha com três chances; continue numa divisão para
+respeitar divisão por zero; contar negativos; pesquisa de salários/filhos; média dos pares; somar inteiros
+entre b e c divisíveis por a; identificar erros de compilação (ex.: break fora de laço, then não existe em C,
+else: num switch); “dias do mês” com if-else, switch e switch sem break; verdadeiro/falso sobre laços (ex.:
+“o do...while executa SEMPRE pelo menos uma vez o corpo” = V; “while e for executam SEMPRE pelo menos
+uma vez” = F; “as três componentes do for são facultativas” = V; “um break dentro de um laço termina o
+programa” = F, termina o laço). Exercício resolvido: tabela ASCII com for(i=0;i<=255;i++) printf("%3d --
+> %c\n", i, (char) i);.
+61 / 76Linguagem C · Material de Estudo NP2
+=== PAGE 62 ===
+PARTE III — Revisão: tabelas-resumo, siglas e revisão-relâmpago
+Tabelas-resumo (NP2)
+Ponteiros em 1 tabela Significado
+int *p; declara ponteiro para int (o * na declaração)
+p = &x; p recebe o endereço de x
+*p = 5; x passa a valer 5 (mudança indireta)
+vet ≡ &vet[0] nome do vetor = endereço do 1º elemento (ponteiro constante)
+vet[i] ≡ *(vet+i) ≡ p[i] valor do elemento i
+p++ / (*p)++ próximo elemento / soma 1 ao valor
+int *x[10]; vetor de 10 ponteiros
+%p imprime endereço (hexadecimal)
+Proibido multiplicar, dividir, somar dois ponteiros, somar/subtrair float/double
+Arquivos Texto Binário
+Gravar fprintf(fp, "%d", x) · fputc/putc(ch, fp) fwrite(&s, sizeof(s), 1, fp)
+Ler fscanf(fp, "%d", &x) · fgetc/getc(fp) · fgets(buf, n, fp) fread(&s, sizeof(s), 1, fp)
+Abrir "r" "w" "a" "r+" "w+" "a+" "rb" "wb" "ab" "r+b" "w+b" "a+b"
+Fim EOF (= -1) · feof(fp) ≠ 0 no fim · fclose(fp) retorna 0 e descarrega o buffer · exit() fecha todos
+Funções Resumo
+Sintaxe tipo_de_retorno nome(tipo_1 arg_1, ...){ bloco }; return termina a função
+Localização antes do main: nada · depois: protótipo · outro arquivo: #include "caminho"
+Arquivo 1 função → nome.c/.cpp · várias → .h/.lib
+Hierarquia chamada escrita antes da chamadora
+Variáveis local (bloco) · formal (parâmetro) · global (fora; vive o programa todo)
+Escopo local de mesmo nome oculta a global; locais de funções diferentes podem ter o mesmo nome
+Passagem valor (cópia, padrão) × referência (ponteiro + & na chamada)
+void sem retorno e/ou sem parâmetros
+Recursão chama a si mesma; precisa critério de parada; gasta memória
+Vetores / strings / struct Resumo
+Vetor homogêneo, estático, índice 0..tam-1, memória = tipo × tamanho
+Matriz a[linha][coluna]; bytes = tam1 × tam2 × tipo
+String vetor de char terminado em '\0'; char s[20] → 19 letras
+#define constante simbólica trocada pelo pré-processador; sem ;
+struct heterogênea / registro; membros com operador ponto; pode aninhar; definir ≠ alocar
+62 / 76Linguagem C · Material de Estudo NP2
+=== PAGE 63 ===
+Lista de siglas e termos
+Sigla Significado
+ADS Análise e Desenvolvimento de Sistemas
+UNIP Universidade Paulista
+PIM Projeto Integrado Multidisciplinar (os slides têm exemplos “para auxílio ao PIM”)
+LTP Linguagem e Técnicas de Programação (disciplina citada nos exercícios)
+NP1 / NP2 Notas de prova 1 e 2
+EOF End Of File — fim de arquivo (vale -1)
+NULL ponteiro nulo (fopen falhou; fim de lista encadeada)
+FILE tipo arquivo (estrutura usada com FILE *)
+FOPEN_MAX número máximo de arquivos abertos simultaneamente
+SEEK_SET / SEEK_CUR /
+SEEK_END
+início / posição atual / fim — usados com fseek()
+stdio.h standard input/output — entrada e saída padronizadas
+conio.h console input and output (getch, getche)
+math.h · string.h ·
+stdlib.h · locale.h
+matemática (sqrt, pow) · strings (strcpy, strcat, strcmp, strcspn) · utilidades (exit, system, malloc)
+· acentuação (setlocale)
+stdin entrada padrão (teclado), usada em fgets(…, stdin) e fflush(stdin)
+I/O Input/Output — entrada/saída
+ASCII American Standard Code for Information Interchange — tabela de códigos dos caracteres
+ANSI American National Standards Institute — padrão do C (getch não faz parte)
+CSV Comma-Separated Values — arquivo texto com campos separados por vírgula
+CNC Controle Numérico Computadorizado (exemplo do switch)
+RA Registro Acadêmico (campo da struct Aluno)
+C99 / VLA versão 1999 do padrão C / Variable Length Array (vetor com tamanho em variável)
+%d %i %f %c %s %p %o
+%x %%
+inteiro, inteiro (qualquer base no scanf), real, caractere, string, ponteiro, octal, hexadecimal, o
+próprio %
+\n · \t · \0 · \a · \b nova linha · tabulação · caractere nulo · sinal sonoro · backspace
+63 / 76Linguagem C · Material de Estudo NP2
+=== PAGE 64 ===
+⚡  Revisão-relâmpago (leia na véspera)
+💡  EXPLICAÇÃO
+1. Ponteiro guarda endereço. & = endereço de; * = conteúdo do endereço. *p=5 muda a variável
+apontada.
+2. Ponteiro não pode ser usado antes de ser inicializado. Ocupa 4 bytes (slide). %p imprime endereço.
+3. vet = &vet[0]; vet[i] = *(vet+i); nome do vetor é ponteiro constante.
+4. p++ anda sizeof(tipo): char 1, int 4, double 8. (*p)++ muda o valor. Não pode ×, ÷, p1+p2, +float.
+5. Por valor = cópia, original não muda (padrão do C). Por referência = passa &x, parâmetro *p, original
+muda (Swap, scanf).
+6. Função: tipo nome(params){...}; return encerra. Depois do main → protótipo; outro arquivo →
+#include "caminho".
+7. Local morre no fim do bloco; global vive o programa todo; formal = parâmetro. Local com mesmo
+nome oculta a global.
+8. Recursão = função chama a si mesma; precisa critério de parada; 5! = 120; gasta memória.
+9. fopen devolve NULL se falhar. "r" exige existir; "w" apaga/cria; "a" acrescenta no fim; "+" lê e grava; "b"
+binário.
+10. Texto: fprintf/fscanf; binário/struct: fwrite/fread(endereço, tamanho, quantidade, arquivo); 1 caractere:
+fputc/fgetc (= putc/getc).
+11. fclose grava o buffer e retorna 0. EOF = -1; feof ≠ 0 no fim. exit() fecha tudo.
+12. Vetor = homogêneo, estático, índice 0..tam-1, bytes = tipo × tam (int idade[100] = 400).
+13. String termina em '\0': "primeiro" ocupa 9; char s[20] guarda 19 letras.
+14. Matriz a[i][j]: i linha, j coluna; int x[3][4] = 48 bytes.
+15. struct = heterogênea (registro); acesso com ponto; pode aninhar; definir não aloca memória.
+16. NP1: a=i++ usa depois soma; a=++i soma antes. * / % antes de + −. % só int. = atribui, == compara.
+17. NP1: ! > && > ||; verdadeiro é ≠0. do…while executa pelo menos 1 vez; switch sem break “cai” para o
+próximo case.
+64 / 76Linguagem C · Material de Estudo NP2
+=== PAGE 65 ===
+PARTE IV — Como o professor monta a prova
+O que os slides indicam sobre o estilo
+Pista nos slides O que isso sugere para a prova
+“Módulo 3 exercício 9” (U3-75): 5
+alternativas A–E de sintaxe do for
+Objetivas A–E em que as alternativas são trechos de código quase iguais (vírgula
+× ponto e vírgula, ; depois do for).
+“Módulo 3 exercício 10” (U3-76/77):
+“Qual saída produzida pela execução
+do laço?”
+Questões de teste de mesa: o enunciado traz o código e as alternativas trazem
+saídas parecidas.
+Exercícios do livro na U8 (U8-42 a
+U8-46)
+“Qual alternativa muda o valor de i para 75?”, “O que será mostrado na tela?” com
+endereços fictícios (1024, 2048).
+Slides com texto conceitual
+(definições em frases longas)
+Enunciados que copiam a frase do slide e pedem a alternativa correta/incorreta
+(“Ponteiros são variáveis que…”, “Na passagem por valor…”).
+Exercícios “Faça um programa…”
+(Volume, Swap, struct + arquivo)
+Dissertativas pedindo para completar/modificar um código (ex.: passar Volume
+por referência, gravar struct em arquivo).
+Figuras de memória (U8-
+06/07/08/19)
+Tabelas Nome/Endereço/Conteúdo para preencher ou interpretar.
+⚠  CAI NA PROVA / PEGADINHA
+Não há prova antiga disponível. O que vai cair é o conteúdo dos slides (Unidades 4, 5, 6 e 8, com a base da
+NP1). Por isso esta seção mostra o estilo que os próprios slides indicam: as questões “Módulo 3 exercício 9
+e 10”, os exercícios do livro do Soffner/Damas colados nos slides e os exercícios propostos. Os simulados
+seguem esse estilo.
+65 / 76Linguagem C · Material de Estudo NP2
+=== PAGE 66 ===
+Conceitos extras que aparecem nos códigos (fora do texto principal)
+Conceito Onde aparece O que saber
+strcpy / strcat / strcmp /
+strcspn
+U8-52, U4-23, U3-
+59, U4-36
+copiar (destino, origem) / anexar ao fim / comparar (0 = iguais) /
+posição do primeiro caractere de um conjunto
+fseek / ftell / rewind U4-28, U4-36 posicionar / saber a posição atual / voltar ao início
+memset U4-34 preenche memória (zera a struct)
+typedef U4-14 cria apelido para o tipo (Aluno)
+static U8-30, U8-51 vetor de mensagens que mantém valor entre chamadas
+malloc / lista encadeada /
+NULL
+U8-10 alocação dinâmica devolve ponteiro; último nó aponta para NULL
+fflush(stdin) / setlocale U6-42, U6-48, U1-
+44
+limpar buffer do teclado / acentuação em português
+pow / sqrt (math.h) U8-37, U4-24, U1-
+67
+potência / raiz quadrada
+gets / fgets / %[^\n] U6-21, U1-35, U1-
+59
+ler linha com espaços
+exit() / system("pause") /
+getch()
+U4-12, U4-30,
+várias
+encerra (fecha arquivos) / pausa / espera tecla
+66 / 76Linguagem C · Material de Estudo NP2
+=== PAGE 67 ===
+PARTE V — Simulado 1 (NP2)
+Formato: 10 objetivas (A–E) + 2 dissertativas, enunciado = frase do slide + cenário aplicado, no estilo das questões que aparecem nos
+slides. Responda antes de olhar o gabarito (está no fim do simulado).
+1. “Ponteiros são variáveis que guardam o endereço de outras variáveis.” Um sistema de estoque executa:
+int qtd = 40;  int *p = &qtd;
+*p = *p - 5;
+printf("%d", qtd);
+O que é impresso?
+A. 40
+B. 35
+C. o endereço de qtd
+D. -5
+E. erro de compilação
+2. Uma loja quer registrar cada venda num arquivo texto log.txt, sem apagar as vendas anteriores e criando o
+arquivo se ele ainda não existir. Qual modo de abertura deve ser usado em fopen("log.txt", ?)?
+A. "r"
+B. "w"
+C. "a"
+D. "r+"
+E. "rb"
+3. “Quando um parâmetro é passado por valor, o valor do argumento é COPIADO para o parâmetro
+correspondente.” Qual a saída?
+void dobra(int x){ x = x * 2; }
+int main(){ int n = 7; dobra(n); printf("%d", n); }
+A. 14
+B. 7
+C. 0
+D. lixo de memória
+E. erro, pois dobra não tem return
+67 / 76Linguagem C · Material de Estudo NP2
+=== PAGE 68 ===
+4. “Em C, o nome de um vetor é tratado como o endereço de seu primeiro elemento.” Considere:
+int v[5] = {2, 4, 6, 8, 10};  int *p = v;
+printf("%d", *(p+3) + p[1]);
+O valor impresso é:
+A. 10
+B. 12
+C. 14
+D. 6
+E. um endereço de memória
+5. Sobre aritmética de ponteiros, assinale a operação NÃO permitida em C (p, p1 e p2 são ponteiros para
+int):
+A. p++;
+B. p1 == p2
+C. p = p + 3;
+D. p = p1 + p2;
+E. *p1 = *p2;
+6. Um RH declarou struct ficha { int matricula; char nome[45]; float salario; };. Assinale a
+alternativa correta.
+A. A definição acima já reserva memória para um funcionário.
+B. Para acessar o salário de struct ficha f1; usa-se f1->salario obrigatoriamente.
+C. Uma estrutura é uma variável composta homogênea.
+D. Após struct ficha f1; o salário é acessado por f1.salario.
+E. Uma struct não pode conter outra struct.
+7. “Quantidade de memória = tamanho do tipo × tamanho do vetor.” Considerando int e float com 4 bytes,
+double com 8 e char com 1, quantos bytes ocupam juntos double notas[25]; char nome[40]; int
+idade[10];?
+A. 75
+B. 200
+C. 240
+D. 280
+E. 320
+68 / 76Linguagem C · Material de Estudo NP2
+=== PAGE 69 ===
+8. “Recursão é o processo pelo qual uma função chama a si mesma repetidamente um número finito de
+vezes.” Qual o retorno de f(4)?
+int f(int n){ if (n == 1) return 1;  return n + f(n - 1); }
+A. 4
+B. 10
+C. 24
+D. 9
+E. a função não para
+9. Analise: I. fprintf e fscanf trabalham bem com arquivos texto. II. fwrite recebe o endereço dos dados, o
+tamanho de cada item, a quantidade de itens e o ponteiro de arquivo. III. fclose retorna 1 em caso de
+sucesso. Está correto o que se afirma em:
+A. I, apenas
+B. II, apenas
+C. I e II, apenas
+D. II e III, apenas
+E. I, II e III
+10. “Se uma função declarar uma variável local com o mesmo nome de uma variável global, esta variável local
+ocultará aquela global.” Qual a saída?
+int x = 5;
+void f(){ int x = 8; x++; }
+int main(){ f(); x = x + 1; printf("%d", x); }
+A. 5
+B. 6
+C. 9
+D. 10
+E. erro: duas variáveis x
+Dissertativa 1. Um caixa eletrônico precisa trocar os valores de duas contas. (a) Explique a diferença entre
+passagem por valor e por referência. (b) Escreva a função Swap e a chamada no main para que num1=100 e
+num2=200 terminem trocados. (c) O que seria impresso se a função recebesse int a, int b (por valor)?
+Dissertativa 2. Uma loja guarda produtos com codigo (int), nome (char[30]) e preco (float). Escreva um
+programa que grave 3 produtos em produtos.bin e depois leia e mostre os dados. Indique os modos de
+abertura usados e por quê.
+69 / 76Linguagem C · Material de Estudo NP2
+=== PAGE 70 ===
+Gabarito comentado — Simulado 1
+✅  GABARITO COMENTADO
+1-B: *p é qtd; 40 − 5 = 35. · 2-C: "a" acrescenta no fim e cria se não existir ("w" apagaria). · 3-B: x é cópia; n
+continua 7. · 4-B: *(p+3)=v[3]=8; p[1]=4; 8+4=12. · 5-D: não se somam dois ponteiros. · 6-D: operador
+ponto; definição não aloca (A falsa), struct é heterogênea (C falsa) e pode ser aninhada (E falsa). · 7-D:
+25×8=200 + 40×1=40 + 10×4=40 = 280. · 8-B: 4+3+2+1 = 10. · 9-C: fclose retorna zero no sucesso. · 10-B:
+o x de f é local (morre); a global 5 vira 6.
+✅  GABARITO COMENTADO
+Dissertativa 1 — resposta-modelo. (a) Por valor, a função recebe uma cópia do argumento; alterações não
+afetam a variável original (padrão do C). Por referência, a função recebe o endereço (&) e, por meio do
+ponteiro (*), altera a variável original.
+void Swap(int *a, int *b){ int temp; temp = *a; *a = *b; *b = temp; }
+int main(){ int num1 = 100, num2 = 200;
+  Swap(&num1, &num2);
+  printf("%d %d", num1, num2); }      // 200 100
+(c) Por valor seriam trocadas só as cópias: imprimiria 100 200. Critérios: conceito correto (40%), ponteiros
+nos parâmetros e & na chamada (40%), saída (20%).
+✅  GABARITO COMENTADO
+Dissertativa 2 — resposta-modelo.
+#include <stdio.h>
+typedef struct { int codigo; char nome[30]; float preco; } Produto;
+int main(){
+  Produto p[3] = {{1,"Arroz",25.9},{2,"Feijao",8.5},{3,"Cafe",19.9}}, lidos[3];
+  int i;  FILE *arq = fopen("produtos.bin", "wb");          // wb: cria/grava binário
+  if (arq == NULL){ printf("Erro ao abrir\n"); return 1; }
+  fwrite(p, sizeof(Produto), 3, arq);                         // grava os 3 de uma vez
+  fclose(arq);
+  arq = fopen("produtos.bin", "rb");                          // rb: lê binário existente
+  if (arq == NULL){ printf("Erro ao abrir\n"); return 1; }
+  fread(lidos, sizeof(Produto), 3, arq);
+  fclose(arq);
+  for (i = 0; i < 3; i++)
+     printf("%d %s %.2f\n", lidos[i].codigo, lidos[i].nome, lidos[i].preco);
+  return 0; }
+"wb" porque o arquivo é binário e deve ser criado/sobrescrito; "rb" porque só será lido. Testa-se NULL após
+cada fopen e fecha-se com fclose (grava o buffer).
+70 / 76Linguagem C · Material de Estudo NP2
+=== PAGE 71 ===
+Simulado 2 (NP2)
+1. “A string contém os caracteres mais um caractere especial de término, chamado caractere nulo ('\0').” Qual
+o valor de sizeof(s) para char s[] = "UNIP";?
+A. 3
+B. 4
+C. 5
+D. 8
+E. 1
+2. Um jogo guarda um tabuleiro em int tab[3][4];. Considerando int de 4 bytes, quantos bytes o
+compilador reserva?
+A. 12
+B. 16
+C. 28
+D. 48
+E. 7
+3. Sobre variáveis locais, é correto afirmar:
+A. São criadas no início do programa e destruídas ao seu final.
+B. Podem ser acessadas por qualquer função.
+C. O espaço de memória é criado quando a execução do bloco é iniciada e destruído quando encerrado.
+D. Duas funções diferentes não podem ter variáveis locais com o mesmo nome.
+E. São declaradas fora do bloco das funções.
+4. Um programador escreveu a função float media2(float a, float b) depois do main, no mesmo
+arquivo. Para o programa compilar corretamente ele deve:
+A. usar #define media2
+B. incluir um protótipo, por exemplo float media2(float, float);
+C. declarar a e b como globais
+D. usar #include <media2.h>
+E. nada, pois a posição da função é indiferente
+5. Considere int v[3] = {5, 6, 7}; e a função void troca(int *pa, int *pb){ int t = *pa; *pa = *pb;
+*pb = t; }. Após troca(v, v+2); o vetor fica:
+A. {5, 6, 7}
+B. {7, 6, 5}
+C. {6, 5, 7}
+D. {5, 7, 6}
+E. {7, 7, 5}
+71 / 76Linguagem C · Material de Estudo NP2
+=== PAGE 72 ===
+6. Sobre EOF e feof, assinale a correta.
+A. feof() retorna zero quando o arquivo chega ao fim.
+B. EOF é uma função que fecha o arquivo.
+C. EOF indica o fim de um arquivo e, no stdio.h, vale -1; feof() retorna não-zero ao atingir o fim.
+D. getc nunca devolve EOF.
+E. feof só funciona com arquivos binários.
+7. “Se você incrementa um ponteiro char* ele anda 1 byte; se incrementa um double* ele anda 8 bytes.” Se
+pc (char*) vale 1000 e pd (double*) vale 2000, após pc++; pd++; os valores são:
+A. 1001 e 2001
+B. 1001 e 2008
+C. 1008 e 2008
+D. 1004 e 2004
+E. 1000 e 2000
+8. O arquivo clientes.txt tem 200 cadastros e o programa executa fp = fopen("clientes.txt", "w");. O
+que acontece com os cadastros?
+A. São preservados e novos dados vão para o fim.
+B. O arquivo é aberto só para leitura.
+C. fopen retorna NULL porque o arquivo existe.
+D. O conteúdo anterior é destruído.
+E. Os dados são convertidos para binário.
+9. Qual a saída?
+int a = 3, b = 9;  int *v[2];
+v[0] = &b;  v[1] = &a;
+printf("%d", *v[0] - *v[1]);
+A. -6
+B. 6
+C. 12
+D. um endereço
+E. erro de compilação
+10. Sobre #define TAM 10, é correto afirmar:
+A. TAM é uma variável do tipo int que ocupa 4 bytes.
+B. A linha deve terminar com ponto e vírgula.
+C. O pré-processador substitui as ocorrências de TAM por 10 antes da compilação, tornando o programa
+mais flexível.
+D. TAM pode ser alterado com TAM = 20;
+E. #define só pode ser usado dentro do main.
+72 / 76Linguagem C · Material de Estudo NP2
+=== PAGE 73 ===
+Dissertativa 1. Faça o teste de mesa de fatorial(4) usando a versão recursiva do slide (if (n==1)
+return(1); printf(" %d x",n); resp = fatorial(n-1) * n;). Mostre as chamadas, os retornos e o que
+aparece na tela. Qual é o critério de parada e por que a recursividade “deve ser evitada sempre que possível”?
+Dissertativa 2. Escreva a função float mediaVetor(float *v, int n) que retorne a média de um vetor
+usando notação de ponteiro (*(v+i)) e um main que a chame com float notas[5] = {8.4, 6.9, 4.5,
+4.6, 7.2};. Explique por que não é preciso usar & na chamada.
+Gabarito comentado — Simulado 2
+✅  GABARITO COMENTADO
+1-C (4 letras + '\0'). · 2-D (3×4×4). · 3-C. · 4-B (protótipo = declaração sem corpo). · 5-B (troca v[0] com v[2]).
+· 6-C. · 7-B. · 8-D ("w" destrói o anterior). · 9-B (9 − 3). · 10-C.
+✅  GABARITO COMENTADO
+Dissertativa 1. fatorial(4) imprime " 4 x" e chama fatorial(3) → imprime " 3 x" e chama fatorial(2) → imprime
+" 2 x" e chama fatorial(1) → retorna 1 (critério de parada n==1). Volta: fatorial(2)=1·2=2; fatorial(3)=2·3=6;
+fatorial(4)=6·4=24. Tela: " 4 x 3 x 2 x 1 = 24" (o main imprime " 1 = %d"). Deve ser evitada porque cada
+chamada consome memória; se usada incorretamente, é lenta e pode esgotar a memória.
+✅  GABARITO COMENTADO
+Dissertativa 2.
+float mediaVetor(float *v, int n){
+  int i; float soma = 0;
+  for (i = 0; i < n; i++) soma = soma + *(v + i);
+  return soma / n; }
+int main(){ float notas[5] = {8.4, 6.9, 4.5, 4.6, 7.2};
+  printf("%.2f", mediaVetor(notas, 5)); }      // 6.32
+O nome do vetor notas já é o endereço do primeiro elemento (notas == &notas[0]), por isso não se usa
+&.
+73 / 76Linguagem C · Material de Estudo NP2
+=== PAGE 74 ===
+PARTE VI — Banco de questões curtas de fixação
+NP2
+# Pergunta Resposta
+1 O que um ponteiro armazena? Um endereço de memória
+2 Qual operador devolve o endereço de uma variável? &
+3 Qual operador devolve o conteúdo do endereço apontado? *
+4 int x=4,*p=&x; *p=*p*3; Quanto vale x? 12
+5 Especificador do printf para endereço? %p
+6 Ponteiro pode ser usado antes de inicializado? Não
+7 vet é equivalente a…? &vet[0]
+8 vet[i] é equivalente a…? *(vet+i)
+9 O nome de um vetor é um ponteiro…? Constante
+10 Quantos bytes anda um int* num p++? 4 (sizeof(int))
+11 Diferença entre p++ e (*p)++? Avança o ponteiro × soma 1 ao valor
+apontado
+12 Cite 2 operações proibidas com ponteiros. Multiplicar/dividir; somar dois ponteiros;
+somar float
+13 O que p1 > p2 compara? Qual aponta para posição mais alta na
+memória
+14 Declare um vetor de 10 ponteiros para int. int *x[10];
+15 Por que scanf recebe &x? Usa passagem por referência para alterar
+x
+16 Passagem padrão do C? Por valor
+17 No Swap, o que se passa na chamada? Os endereços: Swap(&num1,&num2)
+18 Função escrita depois do main precisa de…? Protótipo
+19 Como incluir função de arquivo do usuário? #include "caminho" (aspas duplas)
+20 Arquivo com várias funções usa que extensão? .h ou .lib
+21 Variável declarada na lista de parâmetros chama-se…? Formal
+22 Quando uma global é destruída? Quando o programa é encerrado
+23 Duas globais podem ter o mesmo nome? Não
+24 O que significa void f(void)? Sem retorno e sem parâmetros
+25 O que é critério de parada? Condição em que a recursão para (ex.:
+n==1)
+26 5º número da série de Fibonacci (1,1,2,…)? 5
+27 fopen falhou: retorna…? NULL
+28 Modo que lê e grava texto sem apagar e exige que exista? "r+"
+74 / 76Linguagem C · Material de Estudo NP2
+=== PAGE 75 ===
+29 Modo para criar arquivo binário de escrita? "wb"
+30 Função para gravar struct em binário? fwrite
+31 Ordem dos parâmetros do fread? endereço, tamanho, quantidade, arquivo
+32 fputc é igual a qual função? putc
+33 O que é o buffer? Área de memória temporária antes da
+gravação em disco
+34 fclose retorna o que no sucesso? 0
+35 Valor de EOF? -1
+36 Qual função fecha todos os arquivos abertos? exit()
+37 Função que volta ao início do arquivo? rewind()
+38 Memória de float nota[25]? 100 bytes
+39 Índice do último elemento de int c[10]? 9
+40 Quantas letras cabem em char s[20]? 19 (+ '\0')
+41 char s[]="primeiro": quanto vale s[3]? 'm'
+42 Em a[i][j], o que é i? A linha
+43 int tabela[2][3][2] tem quantos elementos? 12
+44 Struct é variável homogênea ou heterogênea? Heterogênea (registro)
+45 Operador de acesso a membro de struct? . (ponto)
+46 Tamanho de uma struct (slide)? Soma do tamanho de seus itens
+47 A definição de struct aloca memória? Não; só a declaração de variável
+48 strcpy(a,b) copia de onde para onde? De b (origem) para a (destino)
+75 / 76Linguagem C · Material de Estudo NP2
+=== PAGE 76 ===
+NP1
+# Pergunta Resposta
+1 int i=3; a=i++; a e i? a=3, i=4
+2 int i=3; b=++i; b e i? b=4, i=4
+3 4 - 2 * 6 / 4 + 1 2
+4 6 / 2 + 11 % 3 * 4 11
+5 % aceita operandos float? Não, só inteiros
+6 x = 7; x *= 2 + 1; x? 21
+7 Diferença entre = e ==? Atribuição × comparação
+8 !0 || 0 && 1 1
+9 Em C, o que é “verdadeiro”? Qualquer valor diferente de 0
+10 Laço que executa pelo menos uma vez? do…while
+11 switch sem break faz o quê? Executa os cases seguintes
+12 default no switch é obrigatório? Não (opcional)
+13 scanf("%i") com 0x10 lê…? 16 (hexadecimal)
+14 Tamanho de char, int, float, double? 1, 4, 4, 8 bytes
+15 #define ocupa memória? Não (const ocupa)
+16 Nome de variável “1ANO” é válido? Não (começa com número)
+17 getch × getche? getche mostra o caractere; getch não
+18 Ler nome com espaços? fgets(nome, sizeof(nome), stdin) ou
+scanf("%[^\n]", nome)
+76 / 76Linguagem C · Material de Estudo NP2
